@@ -7,12 +7,16 @@
  */
 class Member extends Admin_Controller
 {
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
     }
 
-    function Index()
+    function Enterprise($page = 1)
     {
-
+        $pageSize = 50;
+        $list = $this->model_user_info->GetList(1, $page, $pageSize);
+        $this->assign('list', $list);
+        $this->display('Manage/Member/Enterprise.html');
     }
 }

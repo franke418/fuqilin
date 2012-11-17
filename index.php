@@ -198,6 +198,7 @@ if (!defined('DS')) {
 define('TPLPATH', dirname(BASEPATH) . DS . 'tpl' . DS);
 define('TEMPPATH', dirname(BASEPATH) . DS . 'temp' . DS);
 define('STATICPATH', dirname(BASEPATH) . DS . 'static' . DS);
+define('UPLOADPATH', dirname(BASEPATH) . DS . 'upload' . DS);
 require_once BASEPATH . 'core/CodeIgniter.php';
 
 /* End of file index.php */
