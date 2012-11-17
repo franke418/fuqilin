@@ -1,0 +1,44 @@
+{extends file='../layout.html'}
+{block name=title}管理首页{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>系统信息设置</h2>
+
+        <div id="" class="tabcontent">
+            <div class="form">
+                <form method="POST">
+                    <div class="form_row">
+                        <label>站点名称:</label>
+                        <input type="text" class="form_input" name="title" value="{$title}"/>
+                    </div>
+
+                    <div class="form_row">
+                        <label>站点关键字:</label>
+                        <input type="text" class="form_input" name="keywords" value="{$keywords}"/>
+                    </div>
+
+                    <div class="form_row">
+                        <label>站点描述:</label>
+                        <textarea class="form_textarea" name="desc">{$desc}</textarea>
+                    </div>
+                    <div class="form_row">
+                        <input type="submit" class="form_submit" value="修改"/>
+                    </div>
+                    <div class="clear"></div>
+                    {if isset($smarty.session.message.setting)}
+                    {if $smarty.session.message.setting.type eq 'error'}
+                    <p class="red">{$smarty.session.message.setting.msg}</p>
+                    {else}
+                    <p class="green">{$smarty.session.message.setting.msg}</p>
+                    {/if}
+                    {/if}
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end of right content-->
+
+{/block}

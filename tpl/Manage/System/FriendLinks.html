@@ -1,0 +1,68 @@
+{extends file='../layout.html'}
+{block name=title}友情连接管理{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>友情连接管理</h2>
+        <table id="rounded-corner">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>地址</th>
+                <th>是否显示</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $links as $link }
+            <tr class="odd">
+                <form method="POST" action="{site_url('Manage/System/FriendLinksDel')}">
+                <td style="width:25%">{$link.links_info_text}</td>
+                <td style="width:40%">{$link.links_info_src}</td>
+                <td style="width:10%">{$link.links_info_type}</td>
+                <td style="width:25%"><input value="删除" type="submit"/> </td>
+                    <input type="hidden" value="{$link.links_info_id}" name="link_id" />
+                </form>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        {if isset($smarty.session.message.friendlink)}
+        {if $smarty.session.message.friendlink.type eq 'error'}
+            <p class="red">{$smarty.session.message.friendlink.msg}</p>
+        {else}
+        <p class="green">{$smarty.session.message.friendlink.msg}</p>
+        {/if}
+        {/if}
+        <br/>
+        <h2>添加友情连接</h2>
+        <div class="form">
+            <form method="POST" action="{site_url('Manage/System/FriendLinksAdd')}">
+            <div class="form_row">
+                <label>连接名称:</label>
+                <input type="text" class="form_input" name="link_text" />
+            </div>
+
+            <div class="form_row">
+                <label>连接地址:</label>
+                <input type="text" class="form_input" name="link_src" />
+            </div>
+
+            <div class="form_row">
+                <label>是否显示:</label>
+                <input type="checkbox" name="link_type"/>
+            </div>
+            <div class="form_row">
+                <input type="submit" class="form_submit" value="添加" />
+            </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!-- end of right content-->
+
+{/block}
+
+<!--end of center_content-->
+

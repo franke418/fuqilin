@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{block name=title}{/block} - {$site_title}</title>
+    <link rel="stylesheet" type="text/css" href="{$base_url}static/css/style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+    <!-- jQuery file -->
+    <script src="{$base_url}static/js/jquery.min.js"></script>
+    <script src="{$base_url}static/js/jquery.tabify.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+        $(function () {
+            $('#tabsmenu').tabify();
+            $(".toggle_container").hide();
+            $(".trigger").click(function () {
+                $(this).toggleClass("active").next().slideToggle("slow");
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="panelwrap">
+
+    <div class="header">
+        <div class="title"><a href="{site_url('Manage/Admin/Index')}">{$site_title}</a></div>
+
+        <div class="header_right"></div>
+
+    </div>
+
+    <div class="submenu">
+        <ul>
+            <li><a href="{site_url('Home/Index/index')}">网站首页</a></li>
+            <li><a href="{site_url('Manage/Admin/Index')}">管理首页</a></li>
+            <li><a href="#">{$c_admin_name}</a></li>
+            <li><a href="#" class="settings">设置</a></li>
+            <li><a href="{site_url('Manage/Home/Logout')}" class="logout">退出</a></li>
+        </ul>
+    </div>
+    <div class="center_content">
+        {block name=body}
+        {/block}
+        <div class="sidebar" id="sidebar">
+            <h2>系统设置</h2>
+
+            <ul>
+                <li><a href="{site_url('Manage/System/Setting')}">系统信息设置</a></li>
+                <li><a href="{site_url('Manage/System/CleanTemp')}">缓存清理</a></li>
+                <li><a href="{site_url('Manage/System/FriendLinks')}">友情连接管理</a></li>
+            </ul>
+
+            <h2>用户管理</h2>
+
+            <ul>
+                <li><a href="{site_url('Manage/Member/Index')}">会员管理</a></li>
+                <li><a href="{site_url('Manage/Member/Verify')}">会员审核</a></li>
+            </ul>
+
+            <h2>促销管理</h2>
+
+            <ul>
+                <li><a href="{site_url('Manage/Discount/Category')}">分类管理</a></li>
+                <li><a href="{site_url('Manage/Discount/Info')}">信息管理</a></li>
+            </ul>
+            <h2>团购管理</h2>
+
+            <ul>
+                <li><a href="#">报名表查看</a></li>
+            </ul>
+            <h2>订单管理</h2>
+
+            <ul>
+                <li><a href="#">查看订单</a></li>
+                <li><a href="#">清理订单</a></li>
+            </ul>
+            <h2>展位管理</h2>
+
+            <ul>
+                <li><a href="#">展位管理</a></li>
+            </ul>
+        </div>
+
+
+        <div class="clear"></div>
+    </div>
+    <div class="footer">
+        2012 &copy {$site_title}
+    </div>
+
+</div>
+
+
+</body>
+</html>
