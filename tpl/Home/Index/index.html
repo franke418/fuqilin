@@ -6,27 +6,27 @@
 <div class="box">
     <!--促销活动-->
     <div id="active">
-        <h3><img src="{$base_url}static/images/hot.gif" alt="促销活动" /></h3>
+        <h3><img src="{$base_url}static/images/hot.gif" alt="促销活动"/></h3>
         <dl>
             {$top_one_dz = array_shift($dz_lists)}
             <dt>
-            <span class="one3">・<a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo/{$dz_list.dz_info_id}')}" target="_blank"><b>{$top_one_dz.dz_info_name}</b>
+            <span class="one3">・<a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$dz_list.dz_info_id}" target="_blank"><b>{$top_one_dz.dz_info_name}</b>
             </a></span>
-            <span class="one4"><a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo/{$dz_list.dz_info_id}')}" target="_blank">
-                <img alt="{$top_one_dz.dz_info_name}" src="{$top_one_dz.dz_info_img}" /></a></span>
+            <span class="one4"><a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$dz_list.dz_info_id}" target="_blank">
+                <img alt="{$top_one_dz.dz_info_name}" src="{$top_one_dz.dz_info_img}"/></a></span>
                 <span class="one5">{$top_one_dz.dz_info_text}</span>
             </dt>
             {foreach $dz_lists as $dz_list}
-            <dd>・<a title="{$dz_list.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo/{$dz_list.dz_info_id}')}" target="_blank">
+            <dd>・<a title="{$dz_list.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$dz_list.dz_info_id}" target="_blank">
                 {$dz_list.dz_info_name}</a></dd>
             {/foreach}
         </dl>
-        <h4><a title="曲靖团购会,邀您折上折" href="{site_url('Home/GroupPurchase/Index)}" target="_blank"><img src="{$base_url}static/images/add_01.gif" alt="曲靖团购会,邀您折上折" /></a></h4>
+        <h4><a title="曲靖团购会,邀您折上折" href="{site_url('Home/GroupPurchase/Index')}" target="_blank"><img src="{$base_url}static/images/add_01.gif" alt="曲靖团购会,邀您折上折"/></a></h4>
     </div>
     <!--中间部分-->
     <div id="middle">
         <div id="js">
-            <script language='javascript' type="text/javascript">
+            <script type="text/javascript">
                 linkarr = new Array();
                 picarr = new Array();
                 textarr = new Array();
@@ -55,10 +55,12 @@
             <script src="{$base_url}static/js/sub.js" type="text/javascript"></script>
         </div>
         <div id="notice">
-            <h3><img src="{$base_url}static/images/notice_h3.gif" alt="站内公告" /></h3>
+            <h3><img src="{$base_url}static/images/notice_h3.gif" alt="站内公告"/></h3>
             <ul>
                 {foreach $news_gg_lists as $gg_list}
-                <li><span><a title="{$gg_list.news_info_name}" href="{site_url('Home/News/ShowInfo/{$gg_list.news_info_id})}" target="_blank">
+                <li><span><a title="{$gg_list.news_info_name}"
+                             href="{site_url('Home/News/ShowInfo')}/{$gg_list.news_info_id}"
+                             target="_blank">
                     {$gg_list.news_info_name}</a></span><b>[{$gg_list.news_info_date}]</b></li>
                 {/foreach}
             </ul>
@@ -74,8 +76,8 @@
     </div>
     <div class="right">
         <div id="zhuce">
-            <h3><a title="免费注册" href="{site_url('Home/Register/Index)}">免费注册</a></h3>
-            <h4><a title="发布二手供求信息" href="{site_url('Home/UsedMarket/AddInfo)}">发布二手供求信息</a></h4>
+            <h3><a title="免费注册" href="{site_url('Home/Register/Index')}">免费注册</a></h3>
+            <h4><a title="发布二手供求信息" href="{site_url('Home/UsedMarket/AddInfo')}">发布二手供求信息</a></h4>
         </div>
         <div id="jiaru">
             <ul>
@@ -86,10 +88,10 @@
             </ul>
         </div>
         <div id="vip">
-            <h3><span>VIP企业</span><b><a href="{site_url('Home/Web/ShowInfo/7)}"><u>如何加入</u>？</a></b></h3>
+            <h3><span>VIP企业</span><b><a href="{site_url('Home/Web/ShowInfo')}/7"><u>如何加入</u>？</a></b></h3>
             <ul>
                 {foreach $company_lists as $c_list}
-                <li>・<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo/{$c_list.user_info_id})}" target="_blank">
+                <li>・<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}" target="_blank">
                     {$c_list.user_info_name}</a></li>
                 {/foreach}
             </ul>
@@ -105,11 +107,11 @@
     <!--建材产品库-->
     <div id="ku">
         <div class="ku_tt"><h3><img src="{$base_url}static/images/ku_h3.gif" alt="曲靖建材产品库"></h3><h4>
-            <a href="{site_url('Home/BuildingMaterials/Index)}">查看所有分类</a></h4></div>
+            <a href="{site_url('Home/BuildingMaterials/Index')}">查看所有分类</a></h4></div>
         <div class="ku_box">
             {foreach $jc_coulumn_lists as $jcc_list}
             <dl>
-                <dt><a title="{$jcc_list.jc_coulumn_name}" href="{site_url('Home/BuildingMaterials/ShowCoulumn/{$jcc_list.jc_coulumn_id})}">
+                <dt><a title="{$jcc_list.jc_coulumn_name}" href="{site_url('Home/BuildingMaterials/ShowCoulumn')}/{$jcc_list.jc_coulumn_id}">
                     {$jcc_list.jc_coulumn_name}</a><span>({foreach $jc_coulumn_cont_lists as $count_list}
                             {if $count_list.jc_info_coulumn eq $jcc_list.jc_coulumn_id}
                                 {$count_list.jc_count}
@@ -117,7 +119,7 @@
                         {/foreach})</span></dt>
                 {foreach $jc_sort_lists as $jcs_list}
                 {if $jcs_list.jc_sort_cid eq $jcc_list.jc_coulumn_id}
-                <dd><a title="{$jcs_list.jc_sort_name}" href="{site_url('Home/BuildingMaterials/ShowSort/{$jcs_list.jc_sort_id})}">
+                <dd><a title="{$jcs_list.jc_sort_name}" href="{site_url('Home/BuildingMaterials/ShowSort')}/{$jcs_list.jc_sort_id}">
                     {$jcs_list.jc_sort_name}</a></dd>
                 {/if}
                 {/foreach}
@@ -128,13 +130,13 @@
     <!--left-->
     <div class="right">
         <!--广告-->
-        <div class="add01"><a href="#"><img src="{$base_url}static/images/add_02.jpg" alt="明明白白买建材,福麒麟比价格" /></a></div>
+        <div class="add01"><a href="#"><img src="{$base_url}static/images/add_02.jpg" alt="明明白白买建材,福麒麟比价格"/></a></div>
         <!--企业排行榜-->
         <div id="paih">
             <div class="paih_tt"><h3>曲靖企业排行榜<span>&nbsp;TOP10</span></h3></div>
             <ul>
                 {foreach $company_byclick_lists as $c_c_list}
-                <li><span><a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo/{$c_list.user_info_id})}" target="_blank">
+                <li><span><a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}" target="_blank">
                     {$c_list.user_info_name}</a></span><b>{$c_list.user_info_onclick}</b></li>
                 {/foreach}
             </ul>
@@ -149,10 +151,10 @@
 <div class="null"></div>
 <!--推荐产品-->
 <div class="title1">
-    <h3><img src="{$base_url}static/images/tt01.gif" alt="推荐产品" /></h3>
+    <h3><img src="{$base_url}static/images/tt01.gif" alt="推荐产品"/></h3>
     <h4>
         {foreach $jc_sort_hot_lists as $jcs_hot_list}
-            <span><a title="{$jcs_hot_list.jc_sort_name}" href="{site_url('Home/BuildingMaterials/ShowSort/{$jcs_hot_list.jc_sort_id})}">
+            <span><a title="{$jcs_hot_list.jc_sort_name}" href="{site_url('Home/BuildingMaterials/ShowSort')}/{$jcs_hot_list.jc_sort_id}">
                 {$jcs_hot_list.jc_sort_name})}</a></span>
         {/foreach}
     </h4>
@@ -160,9 +162,10 @@
 <div id="pro">
     <ul>
         {foreach $jc_info_hot_lists as $jc_hot_list}
-        <li><a title="{$jc_hot_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo/{$jc_hot_list.jc_info_id})}" target="_blank">
-            <img alt="{$jc_hot_list.jc_info_name}" src="{$jc_hot_list.jc_info_img}" /></a>
-            <p><a title="{$jc_hot_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo/{$jc_hot_list.jc_info_id})}" target="_blank">
+        <li><a title="{$jc_hot_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$jc_hot_list.jc_info_id}" target="_blank">
+            <img alt="{$jc_hot_list.jc_info_name}" src="{$jc_hot_list.jc_info_img}"/></a>
+
+            <p><a title="{$jc_hot_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$jc_hot_list.jc_info_id}" target="_blank">
                 {$jc_hot_list.jc_info_name}</a></p><span>￥<b>{$jc_hot_list.jc_info_price}</b></span></li>
         {/foreach}
     </ul>
@@ -174,30 +177,30 @@
 <div class="box">
     <!--二手信息-->
     <div class="fabu">
-        <div class="fabu_tt"><h3>最新二手信息</h3><h4><a title="发布二手" href="{site_url('Home/UsedMarket/AddInfo)}">发布二手</a></h4></div>
+        <div class="fabu_tt"><h3>最新二手信息</h3><h4><a title="发布二手" href="{site_url('Home/UsedMarket/AddInfo')}">发布二手</a></h4></div>
         <ul>
             {foreach $es_info_lists as $es_list}
-            <li><span>・&nbsp;<a title="{$es_list.es_info_name}" href="{site_url('Home/UsedMarket/ShowInfo/{$es_list.es_info_id})}" target="_blank">
+            <li><span>・&nbsp;<a title="{$es_list.es_info_name}" href="{site_url('Home/UsedMarket/ShowInfo')}/{$es_list.es_info_id}" target="_blank">
                 {$es_list.es_info_name}</a></span><b>[{$es_list.es_info_date}]</b></li>
             {/foreach}
         </ul>
     </div>
     <!--需求信息-->
     <div class="fabu" style="margin:0 10px 0 9px; display:inline;">
-        <div class="fabu_tt"><h3>最新需求信息</h3><h4><a title="发布需求" href="{site_url('Home/Demand/AddInfo)}">发布需求</a></h4></div>
+        <div class="fabu_tt"><h3>最新需求信息</h3><h4><a title="发布需求" href="{site_url('Home/Demand/AddInfo')}">发布需求</a></h4></div>
         <ul>
             {foreach $xq_info_lists as $xq_list}
-            <li><span>・&nbsp;<a title="{$xq_list.xq_info_name}" href="{site_url('Home/Demand/ShowInfo/{$xq_list.xq_info_id})}" target="_blank">
+            <li><span>・&nbsp;<a title="{$xq_list.xq_info_name}" href="{site_url('Home/Demand/ShowInfo')}/{$xq_list.xq_info_id}" target="_blank">
                 {$xq_list.xq_info_name}</a></span><b>[{$xq_list.xq_info_date}]</b></li>
             {/foreach}
         </ul>
     </div>
     <!--建材资讯-->
     <div class="news">
-        <div class="news_tt"><h3>建材资讯</h3><h4><a title="查看更多曲靖建材资讯" href="{site_url('Home/News/ShowSort/1)}"><img src="{$base_url}static/images/more1.gif" alt="查看更多曲靖建材资讯" /></a></h4></div>
+        <div class="news_tt"><h3>建材资讯</h3><h4><a title="查看更多曲靖建材资讯" href="{site_url('Home/News/ShowSort')}/1"><img src="{$base_url}static/images/more1.gif" alt="查看更多曲靖建材资讯"/></a></h4></div>
         <ul>
             {foreach $news_jc_lists as $njc_list}
-            <li>・<a title="{$njc_list.news_info_name}" href="{site_url('Home/News/ShowInfo/{$njc_list.news_info_id})}" target="_blank">
+            <li>・<a title="{$njc_list.news_info_name}" href="{site_url('Home/News/ShowInfo')}/{$njc_list.news_info_id}" target="_blank">
                 {$njc_list.news_info_name}</a></li>
             {/foreach}
             <div style="clear:both"></div>
@@ -208,14 +211,14 @@
 <!--box4-->
 
 <!-- 第五部分****** -->
-<div class="add02"><a href="#"><img src="{$base_url}static/images/add_03.jpg" /></a></div>
+<div class="add02"><a href="#"><img src="{$base_url}static/images/add_03.jpg"/></a></div>
 <!--展会信息-->
 <div class="null"></div>
 <div class="title1">
-    <h3><img src="{$base_url}static/images/tt02.gif" alt="曲靖建材展会信息" /></h3>
+    <h3><img src="{$base_url}static/images/tt02.gif" alt="曲靖建材展会信息"/></h3>
     <h4>
         {foreach $zh_sort_lists as $zhs_list}
-            <span><a title="{$zhs_list.zh_sort_name}" href="{site_url('Home/Exhibition/ShowSort/{$zhs_list.zh_sort_id})}">
+            <span><a title="{$zhs_list.zh_sort_name}" href="{site_url('Home/Exhibition/ShowSort')}/{$zhs_list.zh_sort_id}">
                 {$zhs_list.zh_sort_name}</a></span>
         {/foreach}
     </h4>
@@ -226,9 +229,10 @@
             <div id="inddemc">
                 <ul class="xyhjlb" id="ddemc1">
                     {foreach $zh_info_lists as $zh_list}
-                    <li><a title="{$zh_list.zh_info_name}" href="{site_url('Home/Exhibition/ShowInfo/{$zh_list.zh_info_id})}" target="_blank">
+                    <li><a title="{$zh_list.zh_info_name}" href="{site_url('Home/Exhibition/ShowInfo')}/{$zh_list.zh_info_id}" target="_blank">
                         <img src="{$zh_list.zh_info_img}" alt="{$zh_list.zh_info_name}"/></a>
-                        <p><a title="{$zh_list.zh_info_name}" href="{site_url('Home/Exhibition/ShowInfo/{$zh_list.zh_info_id})}" target="_blank">
+
+                        <p><a title="{$zh_list.zh_info_name}" href="{site_url('Home/Exhibition/ShowInfo')}/{$zh_list.zh_info_id}" target="_blank">
                             {$zh_list.zh_info_name}</a></p><span>参展企业：<b>{$zh_list.zh_info_member}</b></span></li>
                     {/foreach}
                 </ul>

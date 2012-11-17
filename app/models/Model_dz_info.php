@@ -16,6 +16,12 @@ class Model_dz_info extends CI_Model
         return $this->db->get($this->_table, $pageSize, ($pageNo - 1) * $pageSize)->result_array();
     }
 
+    function GetTop($count)
+    {
+        $this->db->order_by('dz_info_number','desc');
+        return $this->db->get_where($this->_table,array('dz_info_type'=>1,'dz_info_hot'=>1),$count)->result_array();
+    }
+
     function Add($info)
     {
         return $this->db->insert($this->_table,$info);
