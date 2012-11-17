@@ -4,7 +4,7 @@
  * User: lucky41
  * Date: 12-11-17
  * Time: 下午12:34
- * To change this template use File | Settings | File Templates.
+ * @property CI_DB_active_record $db
  */
 
 class Model_dz_sort extends CI_Model
@@ -13,6 +13,10 @@ class Model_dz_sort extends CI_Model
 
     function GetList()
     {
-        return $this->db->get($this->_table);
+        return $this->db->get($this->_table)->result_array();
+    }
+
+    function Add(array $info){
+        return $this->db->insert($this->_table,$info);
     }
 }

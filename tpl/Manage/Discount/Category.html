@@ -16,7 +16,7 @@
             <tbody>
             {foreach $list as $ls }
             <tr class="odd">
-                <form method="POST" action="{site_url('Manage/System/FriendLinksDel')}">
+                <form method="POST" action="{site_url('Manage/System/CategoryDel')}">
                 <td style="width:25%">{$ls.dz_sort_id}</td>
                 <td style="width:40%">{$ls.dz_sort_text}</td>
                 <td style="width:10%">{$ls.dz_sort_name}</td>
@@ -35,23 +35,19 @@
         {/if}
         {/if}
         <br/>
-        <h2>添加友情连接</h2>
+        <h2>添加促销信息分类</h2>
         <div class="form">
-            <form method="POST" action="{site_url('Manage/System/FriendLinksAdd')}">
+            <form method="POST" action="{site_url('Manage/Discount/CategoryAdd')}">
             <div class="form_row">
-                <label>连接名称:</label>
-                <input type="text" class="form_input" name="link_text" />
+                <label>分类名:</label>
+                <input type="text" class="form_input" name="cate_text" />
             </div>
 
             <div class="form_row">
-                <label>连接地址:</label>
-                <input type="text" class="form_input" name="link_src" />
+                <label>英文别名:</label>
+                <input type="text" class="form_input" name="cate_name" />
             </div>
 
-            <div class="form_row">
-                <label>是否显示:</label>
-                <input type="checkbox" name="link_type"/>
-            </div>
             <div class="form_row">
                 <input type="submit" class="form_submit" value="添加" />
             </div>

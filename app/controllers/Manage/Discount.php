@@ -23,7 +23,18 @@ class Discount extends Admin_Controller
         if($this->is_post())
         {
             $post_info = $this->input->post(NULL,TRUE);
-            $info[]
+            $info['dz_sort_name'] = $post_info['cate_name'];
+            $info['dz_sort_text'] = $post_info['cate_text'];
+            $this->model_dz_sort->Add($info);
+            $_SESSION['message']['discount'] = array('type' => 'info', 'msg' => '分类添加成功！');
+            redirect(site_url('Manage/Discount/Category'));
         }
+    }
+
+    function Info()
+    {
+        $list = $this->model_dz_info->GetList();
+        $this->assign('list',$list);
+        //$this->display();
     }
 }

@@ -20,7 +20,7 @@ class MY_Controller extends CI_Controller
      */
     function _load_constants()
     {
-        $this->load->driver('cache',array('adapter' => 'file', 'backup' => 'apc'));
+        $this->load->driver('cache',array('adapter' => 'file', 'backup' => 'file'));
         if(!$this->cache->get('site_title'))
         {
             $site_title = $this->model_web_info->get_single_info('title');

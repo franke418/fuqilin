@@ -11,4 +11,7 @@ class Model_dz_info extends CI_Model
 {
     protected $_table = 'dz_info';
 
+    function GetList($page,$pageSize){
+
+    }
 }

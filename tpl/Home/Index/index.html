@@ -63,17 +63,15 @@
     <div id="active">
         <h3><img src="images/hot.gif" alt="促销活动"></h3>
         <dl>
-            <dt>
-                <span class="one3">・<a href="#"><b>打折促销产品信息放到这里</b></a></span>
-                <span class="one4"><a href="#"><img src="images/01.jpg"></a></span>
-                <span class="one5">设计稿所有文字信息只做占位处理，后期可通过后台随意添加修改或删除...</span>
-            </dt>
-            <dd>・<a href="#">促销活动新闻标题放到这里01</a></dd>
-            <dd>・<a href="#">促销活动新闻标题放到这里02</a></dd>
-            <dd>・<a href="#">促销活动新闻标题放到这里03</a></dd>
-            <dd>・<a href="#">促销活动新闻标题放到这里04</a></dd>
-            <dd>・<a href="#">促销活动新闻标题放到这里05</a></dd>
-            <dd>・<a href="#">促销活动新闻标题放到这里06</a></dd>
+        {$top_one_dz = array_shift($dz_lists)}
+        <dt>
+            <span class="one3">・<a href="#"><b>{$top_one_dz.title}</b></a></span>
+            <span class="one4"><a href="#"><img src="{$top_one_dz.img}"></a></span>
+            <span class="one5">{$top_one_dz.content}</span>
+        </dt>
+        {foreach $dz_lists as $dz_list}
+            <dd>・<a href="{site_url('Promotion/{$dz_list.id}')}">{$dz_list.title}</a></dd>
+        {/foreach}
         </dl>
         <h4><a href="#"><img src="images/add_01.gif" alt="曲靖团购会,邀您折上折"></a></h4>
     </div>
