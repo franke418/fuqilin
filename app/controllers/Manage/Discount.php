@@ -17,4 +17,13 @@ class Discount extends Admin_Controller
         $this->assign('list',$list);
         $this->display('Manage/Discount/Category.html');
     }
+
+    function CategoryAdd()
+    {
+        if($this->is_post())
+        {
+            $post_info = $this->input->post(NULL,TRUE);
+            $info[]
+        }
+    }
 }
