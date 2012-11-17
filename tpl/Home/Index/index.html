@@ -1,5 +1,5 @@
 {extends file='../Master.html'}
-{block name=title}促销信息分类管理{/block}
+{block name=title}首页{/block}
 {block name=body}
 <!-- 第一部分****** -->
 <div class="null"></div>
@@ -10,10 +10,10 @@
         <dl>
             {$top_one_dz = array_shift($dz_lists)}
             <dt>
-            <span class="one3">・<a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$dz_list.dz_info_id}" target="_blank"><b>{$top_one_dz.dz_info_name}</b>
+            <span class="one3">・<a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$top_one_dz.dz_info_id}" target="_blank"><b>{$top_one_dz.dz_info_name}</b>
             </a></span>
-            <span class="one4"><a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$dz_list.dz_info_id}" target="_blank">
-                <img alt="{$top_one_dz.dz_info_name}" src="{$top_one_dz.dz_info_img}"/></a></span>
+            <span class="one4"><a title="{$top_one_dz.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$top_one_dz.dz_info_id}" target="_blank">
+                <img alt="{$top_one_dz.dz_info_name}" src="/upload/{$top_one_dz.dz_info_img}"/></a></span>
                 <span class="one5">{$top_one_dz.dz_info_text}</span>
             </dt>
             {foreach $dz_lists as $dz_list}
