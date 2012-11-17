@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>{block name=title}{/block} - {$web_title}</title>
+    <meta name="keywords" content="{$web_keywords}" />
+    <meta name="description" content="{$web_description}" />
+    <link href="{$base_url}static/css/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<!-- 头部开始****** -->
+<div id="head">
+    <div id="header">
+        <form name="form1" method="post" action="">
+            <ul>
+                <li><a href="index.html">建材网首页</a>&nbsp;|&nbsp;</li>
+                <li><a href="jiancai.html">建材大全</a>&nbsp;|&nbsp;</li>
+                <li>用户登录</li>
+                <li>
+                    <input class="input01" type="text" value="用户名" onblur="if(this.value=='') this.value='用户名'"
+                           onfocus="if(this.value =='用户名' ) this.value=''"></li>
+                <li>
+                    <input class="input01" type="password" value="***" onblur="if(this.value=='') this.value='***'"
+                           onfocus="if(this.value =='***' ) this.value=''"></li>
+                <li>
+                    <input class="button01" type="submit" name="Submit" value=""></li>
+                <li><span><a href="zhuce.html">新用户注册</a></span></li>
+            </ul>
+            <h3>
+                <span><a href="about.html">关于我们</a>&nbsp;|&nbsp;</span> <span><a href="about.html">联系我们</a>&nbsp;|&nbsp;</span>
+                <span><b><a href="about.html">广告服务</a></b></span>
+            </h3>
+        </form>
+    </div>
+</div>
+<div id="top">
+    <h1>
+        <a href="index.html">
+            <img src="images/logo.gif" alt="福麒麟,曲靖建材网"></a></h1>
+    <dl>
+        <dt><b>热门搜索：</b><span><a href="#">水管</a></span><span><a href="#">油漆涂料</a></span><span><a
+                href="#">显示二级分类名</a></span></dt>
+        <dd>
+            <input class="input02" type="text" value="输入您要查找的产品名..." onblur="if(this.value=='') this.value='输入您要查找的产品名...'"
+                   onfocus="if(this.value =='输入您要查找的产品名...' ) this.value=''"></dd>
+        <dd>
+            <input class="button02" type="submit" name="Submit" value=""></dd>
+    </dl>
+</div>
+<div id="nav">
+    <ul>
+        <li class="one1"><a href="index.html">首&nbsp;页</a></li>
+        <li class="one1"><a href="jiancai.html">建材</a></li>
+        <li class="one1"><a href="jiaju.html">家具</a></li>
+        <li class="one1"><a href="zhuangshi.html">装饰</a></li>
+        <li class="one1"><a href="xuqiu.html">需求</a></li>
+        <li class="one1"><a href="zhanhui.html">展会</a></li>
+        <li class="one1"><a href="tuan.html">团购</a></li>
+        <li class="one2"><a href="cuxiao.html">打折促销</a></li>
+        <li class="one2"><a href="ershou.html">二手市场</a></li>
+        <li class="one2"><a href="news.html">新闻资讯</a></li>
+        <li class="one2"><a href="company.html">企业库</a></li>
+    </ul>
+</div>
+
+{block name=body}
+{/block}
+
+<!-- 版权信息 -->
+<div class="null_2">
+</div>
+<div id="foot">
+    <ul>
+        <li><a href="#">网站首页</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">建材</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">家具</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">装饰</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">团购</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">需求</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">展会</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">二手</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">打折</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">新闻</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">企业</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">关于我们</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">广告服务</a>&nbsp;|&nbsp;</li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+    <p>
+        福麒麟（曲靖建材网）版权所有，未经授权禁止转载、摘编、复制或建立镜像.如有违反，追究法律责任！&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">网站统计</a></p>
+    <p>
+        广告业务合作QQ：88888888&nbsp;&nbsp;&nbsp;&nbsp;友情链接合作QQ：88888888&nbsp;&nbsp;&nbsp;&nbsp;手机：13888777777&nbsp;&nbsp;&nbsp;&nbsp;<a
+            href="#"><img src="images/qq.gif">&nbsp;在线客服</a></p>
+    <p>
+        Copygight &copy; 2012 福麒麟-曲靖建材网（www.fuqilin.com） All Rights Reserved
+    </p>
+</div>
+
+</body>
+</html>
