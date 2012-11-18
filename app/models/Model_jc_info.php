@@ -19,4 +19,8 @@ class Model_jc_info extends CI_Model
     {
         return $this->db->get($this->_table)->result_array();
     }
+    function GetListUnverify()
+    {
+        //return $this->db->
+    }
 }

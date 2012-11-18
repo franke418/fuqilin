@@ -10,10 +10,8 @@
         <h4>
             {foreach $jc_sort_lists as $s_list}
             {if $s_list.jc_sort_cid eq $c_list.jc_coulumn_id}
-            {for $foo=1 to 3}
                         <span><a title="{$s_list.jc_sort_name}" href="{site_url('Home/BuildingMaterials/ShowSort')}/{$s_list.jc_sort_id}">
                             {$s_list.jc_sort_name}</a></span>
-            {/for}
             {/if}
             {/foreach}
         </h4>
