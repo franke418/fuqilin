@@ -90,31 +90,7 @@
         </div>
         <!--广告-->
         <div class="add03"><a href="#"><img src="images/add_04.gif" alt="曲靖团购会,邀您折上折"></a></div>
-        <!--VIP企业-->
-        <div id="vip">
-            <h3>
-                <span>VIP企业</span><b><a href="{site_url('Home/Web/ShowInfo')}/7"><u>如何加入</u>？</a></b></h3>
-            <ul>
-                {foreach $company_lists as $c_list}
-                <li>・<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
-                        target="_blank"> {$c_list.user_info_name}</a></li>
-                {/foreach}
-            </ul>
-        </div>
-        <div class="null"></div>
-        <!--企业排行榜-->
-        <div id="paih">
-            <div class="paih_tt">
-                <h3>
-                    曲靖企业排行榜<span>&nbsp;TOP10</span></h3>
-            </div>
-            <ul>
-                {foreach $company_byclick_lists as $c_c_list}
-                <li><span><a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
-                             target="_blank">{$c_list.user_info_name}</a></span><b>{$c_list.user_info_onclick}</b></li>
-                {/foreach}
-            </ul>
-        </div>
+
     </div><!--right-->
     <div class="null"></div></div><!--box-->
 {/block}
