@@ -1,12 +1,12 @@
 {extends file='../Master.html'}
-{block name=title}{$web_title}-½¨²Ä¿â{/block}
+{block name=title}{$web_title}-å»ºæåº“{/block}
 {block name=body}
-<!-- ×ÓÒ³²¿·Ö****** -->
+
 <div id="sub_top">
     <h3>
         {$web_map}</h3>
 </div>
-<!--²éÕÒ-->
+
 <div id="sub_search">
     <script type="text/javascript" language="javascript">
         $(function () {
@@ -18,49 +18,49 @@
             var submit_url = "";
             $('#search_list1 dd').click(function () {
                 $(this).addClass("hover01").siblings().removeClass("hover01");
-                $('#search_column').html("Àà±ğ£º" + $(this).find("a").html());
+                $('#search_column').html("ç±»åˆ«ï¼š" + $(this).find("a").html());
                 column_id = $(this).attr('column_id');
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
-                alert(submit_url); //Ìá½»
+                alert(submit_url);
             });
             $('#search_list2 dd').click(function () {
                 $(this).addClass("hover01").siblings().removeClass("hover01");
-                $('#search_sort').html("µØÇø£º" + $(this).find("a").html());
+                $('#search_sort').html("åœ°åŒºï¼š" + $(this).find("a").html());
                 sort_id = $(this).attr('sort_id');
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
-                alert(submit_url); //Ìá½»
+                alert(submit_url);
             });
             $('#order_type').change(function () {
                 order_type = $("#order_type").find('option:selected').attr('value'); ;
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
-                alert(submit_url); //Ìá½»
+                alert(submit_url);
             });
             $('#price_type').change(function () {
                 price_type = $("#price_type").find('option:selected').attr('value'); ;
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
-                alert(submit_url); //Ìá½»
+                alert(submit_url);
             });
         });
     </script>
     <div class="sub_s_top">
         <dl>
-            <dt>ÄúÒÑÑ¡Ôñ£º</dt>
+            <dt>æ‚¨å·²é€‰æ‹©ï¼š</dt>
             <dd>
                 <a>{$web_title}&nbsp;</a></dd>
             <dd>
-                <a id="search_column">Àà±ğ£º²»ÏŞ&nbsp;</a></dd>
+                <a id="search_column">ç±»åˆ«ï¼šä¸é™&nbsp;</a></dd>
             <dd>
-                <a id="search_sort">µØÇø£º²»ÏŞ&nbsp;</a></dd>
+                <a id="search_sort">åœ°åŒºï¼šä¸é™&nbsp;</a></dd>
         </dl>
     </div>
     <div class="sub_s_box">
         <!--01-->
         <div class="search1">
             <h3>
-                Àà±ğ£º</h3>
+                ç±»åˆ«ï¼š</h3>
             <dl id="search_list1">
                 <dd column_id="0" class="hover01">
-                    <a href="#">²»ÏŞ</a></dd>
+                    <a href="#">ä¸é™</a></dd>
                 {foreach $jc_sort_lists as $s_list}
                 <dd column_id="{$s_list.jc_sort_id}">
                     <a title="{$s_list.jc_sort_name}" href="#">{$s_list.jc_sort_name}</a></dd>
@@ -70,10 +70,10 @@
         <!--02-->
         <div class="search2">
             <h3>
-                µØÇø£º</h3>
+                åœ°åŒºï¼š</h3>
             <dl id="search_list2">
                 <dd sort_id="0" class="hover01">
-                    <a href="#">²»ÏŞ</a></dd>
+                    <a href="#">ä¸é™</a></dd>
                 {foreach $jc_expansion_lists as $e_list}
                 <dd sort_id="{$e_list.exp_id}">
                     <a title="{$e_list.exp_name}" href="#">{$e_list.exp_name}</a></dd>
@@ -84,41 +84,41 @@
     <div style="clear: both">
     </div>
 </div>
-<!--ÄÚÈİ-->
+<!--????-->
 <div class="null">
 </div>
 <div class="box">
     <div class="left1">
         <div id="sub_tt1">
             <h3>
-                ½¨²ÄÁĞ±í</h3>
+                å»ºæåˆ—è¡¨</h3>
             <p>
-                ¹²ÕÒµ½&nbsp;<b>{$info_count}</b>&nbsp;Ìõ¼ÇÂ¼ ¡ı</p>
+                å…±æ‰¾åˆ°&nbsp;<b>{$info_count}</b>&nbsp;æ¡è®°å½• â†“</p>
         </div>
         <div id="sub_tt2">
             <dl>
                 <dt>
-                    <img src="{$base_url}static/images/mark7.gif" alt="¾«È·²éÕÒ"/></dt>
+                    <img src="{$base_url}static/images/mark7.gif" alt="ç²¾ç¡®æŸ¥æ‰¾"/></dt>
                 <dd>
-                    ÅÅĞò£º
+                    æ’åºï¼š
                     <select id="order_type" name="select" size="1">
-                        <option value="0">Ä¬ÈÏÅÅĞò&nbsp;</option>
-                        <option value="1">¹Ø×¢¶È´Ó¸ßµ½µÍ&nbsp;</option>
-                        <option value="2">¼Û¸ñ´ÓµÍµ½¸ß&nbsp;</option>
-                        <option value="3">¼Û¸ñ´Ó¸ßµ½µÍ&nbsp;</option>
+                        <option value="0">é»˜è®¤æ’åº&nbsp;</option>
+                        <option value="1">å…³æ³¨åº¦ä»é«˜åˆ°ä½&nbsp;</option>
+                        <option value="2">ä»·æ ¼ä»ä½åˆ°é«˜&nbsp;</option>
+                        <option value="3">ä»·æ ¼ä»é«˜åˆ°ä½&nbsp;</option>
                     </select>
                 </dd>
                 <dd>
-                    ÊÇ·ñ±¨¼Û£º
+                    æ˜¯å¦æŠ¥ä»·ï¼š
                     <select id="price_type" name="select" size="1">
-                        <option value="0">È«²¿</option>
-                        <option value="1">ÊÇ</option>
-                        <option value="2">·ñ</option>
+                        <option value="0">å…¨éƒ¨</option>
+                        <option value="1">æ˜¯</option>
+                        <option value="2">å¦</option>
                     </select>
                 </dd>
             </dl>
         </div>
-        <!--²úÆ·ÁĞ±í-->
+        <!--????ï¿½ï¿½?-->
         <div id="sub_list1">
             {foreach $jc_info_list as $i_list}
             <dl>
@@ -130,86 +130,85 @@
                         <a title="{$i_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$i_list.jc_info_id}"
                            target="_blank">{$i_list.jc_info_name}</a></h3>
                     <p>
-                        Æ·ÅÆ£º<u>{$i_list.jc_info_brand}</u></p>
+                        å“ç‰Œï¼š<u>{$i_list.jc_info_brand}</u></p>
                     <p>
-                        ÃèÊö£º<span>{$i_list.jc_info_text}</span></p>
+                        æè¿°ï¼š<span>{$i_list.jc_info_text}</span></p>
                     <h4>
-                        ÉÌ¼Ò£º<a title="{$i_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$i_list.user_info_id}"
-                              target="_blank"> {$i_list.user_info_name}</a>&nbsp;&nbsp;|&nbsp;&nbsp;¹Ø×¢¶È£º{$i_list.jc_info_onclick}´Î</h4>
+                        å•†å®¶ï¼š<a title="{$i_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$i_list.user_info_id}"
+                              target="_blank"> {$i_list.user_info_name}</a>&nbsp;&nbsp;|&nbsp;&nbsp;å…³æ³¨åº¦ï¼š{$i_list.jc_info_onclick}??</h4>
                 </dd>
                 <dd class="two2">
-                    £¤&nbsp;<span>{$i_list.jc_info_price}</span></dd>
+                    ï¿¥&nbsp;<span>{$i_list.jc_info_price}</span></dd>
                 <dd class="two3">
                     <span>{$i_list.jc_info_date}</span>
                     <p>
-                        <a title="ÁªÏµ·½Ê½" href="{site_url('Home/Enterprise/ShowInfo')}/{$i_list.user_info_id}"
+                        <a title="è”ç³»æ–¹å¼" href="{site_url('Home/Enterprise/ShowInfo')}/{$i_list.user_info_id}"
                            target="_blank">
-                            <img src="{$base_url}static/images/contact.gif" alt="ÁªÏµ·½Ê½" /></a></p>
+                            <img src="{$base_url}static/images/contact.gif" alt="è”ç³»æ–¹å¼" /></a></p>
                     <p>
                         <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$i_list.user_info_QQ}&site=qq&menu=yes">
-                            <img border="0" src="http://wpa.qq.com/pa?p=2:{$i_list.user_info_QQ}:42" alt="ÔÚÏß×ÉÑ¯"
-                                 title="ÔÚÏß×ÉÑ¯"></a></p>
+                            <img border="0" src="http://wpa.qq.com/pa?p=2:{$i_list.user_info_QQ}:42" alt="???????"
+                                 title="åœ¨çº¿å’¨è¯¢"></a></p>
                 </dd>
             </dl>
             {/foreach}
             <div class="null">
             </div>
         </div>
-        <!--·ÖÒ³-->
+        <!--???-->
         <div align="center">
             {$info_page}
         </div>
     </div>
     <!--left-->
     <div class="right">
-        <!--»Æ½ğÕ¹Î»-->
+        <!--????ï¿½ï¿½-->
         <div id="tuig">
             <div class="tuig_tt">
                 <h3>
-                    »Æ½ğÕ¹Î»</h3>
+                    é»„é‡‘å±•ä½</h3>
                 <h4>
-                    <a href="#">¼ÓÈëÍÆ¹ã</a></h4>
+                    <a href="#">åŠ å…¥æ¨å¹¿</a></h4>
             </div>
             <ul>
                 <li>
                     <p>
                         <a href="#">
-                            <img src="images/01.jpg"></a><b>²úÆ·Ãû³Æ±êÌâ·Åµ½ÕâÀï01</b></p>
-                    <span><a href="#">Çú¾¸»ªÈüÎÀÔ¡ÓĞÏŞ¹«Ë¾01</a></span></li>
+                            <img src="images/01.jpg"></a><b>äº§å“åç§°æ ‡é¢˜æ”¾åˆ°è¿™é‡Œ01</b></p>
+                    <span><a href="#">æ›²é–åèµ›å«æµ´æœ‰é™å…¬å¸01</a></span></li>
                 <li>
                     <p>
                         <a href="#">
-                            <img src="images/02.jpg"></a><b>²úÆ·Ãû³Æ±êÌâ·Åµ½ÕâÀï02</b></p>
-                    <span><a href="#">Çú¾¸»ªÈüÎÀÔ¡ÓĞÏŞ¹«Ë¾02</a></span></li>
+                            <img src="images/02.jpg"></a><b>äº§å“åç§°æ ‡é¢˜æ”¾åˆ°è¿™é‡Œ02</b></p>
+                    <span><a href="#">æ›²é–åèµ›å«æµ´æœ‰é™å…¬å¸02</a></span></li>
                 <li>
                     <p>
                         <a href="#">
-                            <img src="images/03.jpg"></a><b>²úÆ·Ãû³Æ±êÌâ·Åµ½ÕâÀï03</b></p>
-                    <span><a href="#">Çú¾¸»ªÈüÎÀÔ¡ÓĞÏŞ¹«Ë¾03</a></span></li>
+                            <img src="images/03.jpg"></a><b>äº§å“åç§°æ ‡é¢˜æ”¾åˆ°è¿™é‡Œ03</b></p>
+                    <span><a href="#">æ›²é–åèµ›å«æµ´æœ‰é™å…¬å¸03</a></span></li>
             </ul>
         </div>
-        <!--¹ã¸æ-->
+        <!--???-->
         <div class="add03">
             <a href="#">
-                <img src="images/add_04.gif" alt="Çú¾¸ÍÅ¹º»á,ÑûÄúÕÛÉÏÕÛ"></a></div>
-        <!--VIPÆóÒµ-->
+                <img src="images/add_04.gif" alt="æ›²é–å›¢è´­ä¼š,é‚€æ‚¨æŠ˜ä¸ŠæŠ˜"></a></div>
+        <!--VIP???-->
         <div id="vip">
             <h3>
-                <span>VIPÆóÒµ</span><b><a href="{site_url('Home/Web/ShowInfo')}/7"><u>ÈçºÎ¼ÓÈë</u>£¿</a></b></h3>
+                <span>VIP???</span><b><a href="{site_url('Home/Web/ShowInfo')}/7"><u>å¦‚ä½•åŠ å…¥</u>?</a></b></h3>
             <ul>
                 {foreach $company_lists as $c_list}
-                <li>¡¤<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
+                <li>??<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
                         target="_blank"> {$c_list.user_info_name}</a></li>
                 {/foreach}
             </ul>
         </div>
         <div class="null">
         </div>
-        <!--ÆóÒµÅÅĞĞ°ñ-->
         <div id="paih">
             <div class="paih_tt">
                 <h3>
-                    Çú¾¸ÆóÒµÅÅĞĞ°ñ<span>&nbsp;TOP10</span></h3>
+                    æ›²é–ä¼ä¸šæ’è¡Œæ¦œ<span>&nbsp;TOP10</span></h3>
             </div>
             <ul>
                 {foreach $company_byclick_lists as $c_c_list}

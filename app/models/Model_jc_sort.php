@@ -19,4 +19,9 @@ class Model_jc_sort extends CI_Model
     {
         return $this->db->insert($this->_table,$info);
     }
+    function Get($id)
+    {
+        $ret= $this->db->get_where($this->_table,array('jc_sort_id'=>$id))->result_array();
+        return $ret[0];
+    }
 }

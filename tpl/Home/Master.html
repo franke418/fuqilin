@@ -6,6 +6,7 @@
     <title>{block name=title}{/block} - {$site_title}</title>
     <meta name="keywords" content="{$site_keywords}" />
     <meta name="description" content="{$site_desc}" />
+    <script src="{$base_url}static/js/jquery.min.js"></script>
     <link href="{$base_url}static/css/index.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +16,7 @@
         <form name="form1" method="post" action="">
             <ul>
                 <li><a href="/">建材网首页</a>&nbsp;|&nbsp;</li>
-                <li><a href="{site_url('Home/BuildMaterials/Index')}">建材大全</a>&nbsp;|&nbsp;</li>
+                <li><a href="{site_url('Home/BuildingMaterials/Index')}">建材大全</a>&nbsp;|&nbsp;</li>
                 <li>用户登录</li>
                 <li>
                     <input class="input01" type="text" value="用户名" onblur="if(this.value=='') this.value='用户名'"
@@ -51,7 +52,7 @@
 <div id="nav">
     <ul>
         <li class="one1"><a href="/">首&nbsp;页</a></li>
-        <li class="one1"><a href="{site_url('Home/BuildMaterials/Index')}">建材</a></li>
+        <li class="one1"><a href="{site_url('Home/BuildingMaterials/Index')}">建材</a></li>
         <li class="one1"><a href="{site_url('Home/Furniture/Index')}">家具</a></li>
         <li class="one1"><a href="{site_url('Home/Decoration/Index')}">装饰</a></li>
         <li class="one1"><a href="{site_url('Home/Demand/Index')}">需求</a></li>
