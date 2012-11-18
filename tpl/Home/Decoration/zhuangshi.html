@@ -1,6 +1,4 @@
-{extends file='../Master.html'}
-{block name=title}装饰装修{/block}
-{block name=body}
+{extends file='../Master.html'} {block name=title}二手信息{/block} {block name=body}
 <!-- 子页部分****** -->
 <div id="sub_top">
     <h3>
@@ -18,25 +16,15 @@
             var submit_url = "";
             $('#search_list1 dd').click(function () {
                 $(this).addClass("hover01").siblings().removeClass("hover01");
-                $('#search_column').html("装修风格：" + $(this).find("a").html());
+                $('#search_column').html("类别：" + $(this).find("a").html());
                 column_id = $(this).attr('column_id');
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
                 alert(submit_url); //提交
             });
             $('#search_list2 dd').click(function () {
                 $(this).addClass("hover01").siblings().removeClass("hover01");
-                $('#search_sort').html("装修分类：" + $(this).find("a").html());
+                $('#search_sort').html("地区：" + $(this).find("a").html());
                 sort_id = $(this).attr('sort_id');
-                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
-                alert(submit_url); //提交
-            });
-            $('#order_type').change(function () {
-                order_type = $("#order_type").find('option:selected').attr('value'); ;
-                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
-                alert(submit_url); //提交
-            });
-            $('#price_type').change(function () {
-                price_type = $("#price_type").find('option:selected').attr('value'); ;
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
                 alert(submit_url); //提交
             });
@@ -46,11 +34,11 @@
         <dl>
             <dt>您已选择：</dt>
             <dd>
-                <a>装修装饰&nbsp;</a></dd>
+                <a>二手市场&nbsp;</a></dd>
             <dd>
-                <a id="search_column">装修风格：不限&nbsp;</a></dd>
+                <a id="search_column">类别：不限&nbsp;</a></dd>
             <dd>
-                <a id="search_sort">装修分类：不限&nbsp;</a></dd>
+                <a id="search_sort">地区：不限&nbsp;</a></dd>
         </dl>
     </div>
     <div class="sub_s_box">
@@ -61,9 +49,9 @@
             <dl id="search_list1">
                 <dd column_id="0" class="hover01">
                     <a href="#">不限</a></dd>
-                {foreach $zs_sort_lists as $s_list}
-                <dd column_id="{$s_list.zs_sort_id}">
-                    <a title="{$s_list.zs_sort_name}" href="#">{$s_list.zs_sort_name}</a></dd>
+                {foreach $es_sort_lists as $s_list}
+                <dd column_id="{$s_list.es_sort_id}">
+                    <a title="{$s_list.es_sort_name}" href="#">{$s_list.es_sort_name}</a></dd>
                 {/foreach}
             </dl>
         </div>
@@ -74,7 +62,7 @@
             <dl id="search_list2">
                 <dd sort_id="0" class="hover01">
                     <a href="#">不限</a></dd>
-                {foreach $zs_expansion_lists as $e_list}
+                {foreach $es_expansion_lists as $e_list}
                 <dd sort_id="{$e_list.exp_id}">
                     <a title="{$e_list.exp_name}" href="#">{$e_list.exp_name}</a></dd>
                 {/foreach}
@@ -91,58 +79,33 @@
     <div class="left1">
         <div id="sub_tt1">
             <h3>
-                装饰案列</h3>
+                二手列表</h3>
+            <h4>
+                <a title="发布二手信息" href="{site_url('Home/UsedMarket/AddInfo')}">发布二手信息</a></h4>
             <p>
                 共找到&nbsp;<b>{$info_count}</b>&nbsp;条记录 ↓</p>
         </div>
-        <div id="sub_tt2">
-            <dl>
-                <dt>
-                    <img src="{$base_url}static/images/mark7.gif" alt="精确查找" /></dt>
-                <dd>
-                    排序：
-                    <select id="order_type" name="select" size="1">
-                        <option value="0">默认排序&nbsp;</option>
-                        <option value="1">关注度从高到低&nbsp;</option>
-                        <option value="2">价格从低到高&nbsp;</option>
-                        <option value="3">价格从高到低&nbsp;</option>
-                    </select>
-                </dd>
-                <dd>
-                    是否报价：
-                    <select id="price_type" name="select" size="1">
-                        <option value="0">全部</option>
-                        <option value="1">是</option>
-                        <option value="2">否</option>
-                    </select>
-                </dd>
-            </dl>
-        </div>
         <!--产品列表-->
         <div id="sub_list2">
-            {foreach $zs_info_list as $i_list}
+            {foreach $es_info_list as $i_list}
             <dl>
-                <dt><a title="{$i_list.zs_info_name}" href="{site_url('Home/Decoration/ShowInfo')}/{$i_list.zs_info_id}"
+                <dt><a title="{$i_list.es_info_name}" href="{site_url('Home/UsedMarket/ShowInfo')}/{$i_list.es_info_id}"
                        target="_blank">
-                    <img alt="{$i_list.zs_info_name}" src="{$i_list.zs_info_img}"></a></dt>
-                <dd class="two4">
+                    <img alt="{$i_list.es_info_name}" src="{$i_list.es_info_img}" /></a></dt>
+                <dd class="two1">
                     <h3>
-                        <a title="{$i_list.zs_info_name}" href="{site_url('Home/Decoration/ShowInfo')}/{$i_list.zs_info_id}"
-                           target="_blank">{$i_list.zs_info_name}</a></h3>
+                        <a href="xuqiu_info.html">{$i_list.es_info_name}</a></h3>
+                    <p>
+                        所&nbsp;&nbsp;属：<u>{$i_list.es_sort_name}</u></p>
+                    <p>
+                        描&nbsp;&nbsp;述：<span>{$i_list.es_info_text}</span></p>
                     <h4>
-                        企业：<a title="{$i_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$i_list.user_info_id}"
-                              target="_blank">{$i_list.user_info_name}</a>&nbsp;&nbsp;|&nbsp;&nbsp;关注度：{$i_list.zs_info_onclick}次</h4>
-                    <p>
-                        描述：<span>{$i_list.zs_info_text}</span></p>
-                    <p>
-                        报价：<u>{$i_list.zs_info_price}</u></p>
+                        关注度：{$i_list.es_info_onclick}</h4>
                 </dd>
+                <dd class="two2">
+                    ￥&nbsp;<span>{$i_list.es_info_price}</span></dd>
                 <dd class="two3">
-                    <span>{$i_list.zs_info_date}</span>
-                    <p>
-                        <a title="联系方式" href="{site_url('Home/Enterprise/ShowInfo')}/{$i_list.user_info_id}"
-                           target="_blank">
-                            <img src="{$base_url}static/images/contact.gif" alt="联系方式" /></a></p>
+                    <span>{$i_list.es_info_date}</span>
                     <p>
                         <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$i_list.user_info_QQ}&site=qq&menu=yes">
                             <img border="0" src="http://wpa.qq.com/pa?p=2:{$i_list.user_info_QQ}:42" alt="在线咨询"
