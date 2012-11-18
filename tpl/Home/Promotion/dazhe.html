@@ -1,4 +1,5 @@
-{extends file='../Master.html'} {block name=title}二手信息{/block} {block name=body}
+{extends file='../Master.html'} {block name=title}打折信息{/block} {block
+name=body}
 <!-- 子页部分****** -->
 <div id="sub_top">
     <h3>
@@ -28,13 +29,23 @@
                 submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
                 alert(submit_url); //提交
             });
+            $('#order_type').change(function () {
+                order_type = $("#order_type").find('option:selected').attr('value'); ;
+                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
+                alert(submit_url); //提交
+            });
+            $('#price_type').change(function () {
+                price_type = $("#price_type").find('option:selected').attr('value'); ;
+                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
+                alert(submit_url); //提交
+            });
         });
     </script>
     <div class="sub_s_top">
         <dl>
             <dt>您已选择：</dt>
             <dd>
-                <a>二手市场&nbsp;</a></dd>
+                <a>打折信息&nbsp;</a></dd>
             <dd>
                 <a id="search_column">类别：不限&nbsp;</a></dd>
             <dd>
@@ -49,9 +60,9 @@
             <dl id="search_list1">
                 <dd column_id="0" class="hover01">
                     <a href="#">不限</a></dd>
-                {foreach $es_sort_lists as $s_list}
-                <dd column_id="{$s_list.es_sort_id}">
-                    <a title="{$s_list.es_sort_name}" href="#">{$s_list.es_sort_name}</a></dd>
+                {foreach $dz_sort_lists as $s_list}
+                <dd column_id="{$s_list.dz_sort_id}">
+                    <a title="{$s_list.dz_sort_name}" href="#">{$s_list.dz_sort_name}</a></dd>
                 {/foreach}
             </dl>
         </div>
@@ -62,7 +73,7 @@
             <dl id="search_list2">
                 <dd sort_id="0" class="hover01">
                     <a href="#">不限</a></dd>
-                {foreach $es_expansion_lists as $e_list}
+                {foreach $dz_expansion_lists as $e_list}
                 <dd sort_id="{$e_list.exp_id}">
                     <a title="{$e_list.exp_name}" href="#">{$e_list.exp_name}</a></dd>
                 {/foreach}
@@ -79,40 +90,42 @@
     <div class="left1">
         <div id="sub_tt1">
             <h3>
-                二手列表</h3>
-            <h4>
-                <a title="发布二手信息" href="{site_url('Home/UsedMarket/AddInfo')}">发布二手信息</a></h4>
+                打折促销</h3>
             <p>
                 共找到&nbsp;<b>{$info_count}</b>&nbsp;条记录 ↓</p>
         </div>
-        <!--产品列表-->
-        <div id="sub_list2">
-            {foreach $es_info_list as $i_list}
+        <div id="sub_tt2">
             <dl>
-                <dt><a title="{$i_list.es_info_name}" href="{site_url('Home/UsedMarket/ShowInfo')}/{$i_list.es_info_id}"
-                       target="_blank">
-                    <img alt="{$i_list.es_info_name}" src="{$i_list.es_info_img}" /></a></dt>
-                <dd class="two1">
-                    <h3>
-                        <a href="xuqiu_info.html">{$i_list.es_info_name}</a></h3>
-                    <p>
-                        所&nbsp;&nbsp;属：<u>{$i_list.es_sort_name}</u></p>
-                    <p>
-                        描&nbsp;&nbsp;述：<span>{$i_list.es_info_text}</span></p>
-                    <h4>
-                        关注度：{$i_list.es_info_onclick}</h4>
+                <dt>
+                    <img src="{$base_url}static/images/mark7.gif" alt="精确查找" /></dt>
+                <dd>
+                    排序：
+                    <select id="order_type" name="select" size="1">
+                        <option value="0">默认排序&nbsp;</option>
+                        <option value="1">关注度从高到低&nbsp;</option>
+                        <option value="2">价格从低到高&nbsp;</option>
+                        <option value="3">价格从高到低&nbsp;</option>
+                    </select>
                 </dd>
-                <dd class="two2">
-                    ￥&nbsp;<span>{$i_list.es_info_price}</span></dd>
-                <dd class="two3">
-                    <span>{$i_list.es_info_date}</span>
-                    <p>
-                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$i_list.user_info_QQ}&site=qq&menu=yes">
-                            <img border="0" src="http://wpa.qq.com/pa?p=2:{$i_list.user_info_QQ}:42" alt="在线咨询"
-                                 title="在线咨询"></a></p>
+                <dd>
+                    是否报价：
+                    <select id="price_type" name="select" size="1">
+                        <option value="0">全部</option>
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
                 </dd>
             </dl>
-            {/foreach}
+        </div>
+        <!--产品列表-->
+        <div id="sub_list3">
+            <ul>
+                {foreach $dz_info_list as $i_list}
+                <li><a title="{$i_list.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$i_list.dz_info_id}" target="_blank">
+                    <h3><img alt="{$i_list.dz_info_name}" src="{$i_list.dz_info_img}" /></h3><p>
+                    {$i_list.dz_info_name}</p><span>促销价：￥<b>{$i_list.dz_info_price}</b>&nbsp;</span></a></li>
+                {/foreach}
+            </ul>
             <div class="null">
             </div>
         </div>
