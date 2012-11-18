@@ -1,26 +1,31 @@
-{extends file='../Master.html'}
-{block name=title}{$web_title}-需求信息{/block}
-{block name=body}
+{extends file='../Master.html'} {block name=title}{$web_title}-打折信息{/block} {block
+name=body}
 <!-- 子页部分****** -->
 <div id="sub_top"><h3>{$web_map}</h3></div>
 <!--产品信息-->
 <div id="info_box">
 
-    <h2><img alt="{$xq_table.xq_info_name}" src="{$xq_table.xq_info_img}" /></h2>
-    <h1>{$xq_table.xq_info_name}</h1>
+    <h2><img alt="{$dz_table.dz_info_name}" src="{$dz_table.dz_info_img}" /></h2>
+    <h1>{$dz_table.dz_info_name}</h1>
     <dl>
-        <dd>类&nbsp;&nbsp;&nbsp;&nbsp;别：需求信息</dd>
-        <dd>更新时间：{$xq_table.xq_info_date}&nbsp;&nbsp;|&nbsp;&nbsp;关注度：{$xq_table.xq_info_onclick}次</dd>
-        <dd style="padding-top:14px;">
-            <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$xq_table.user_info_QQ}&site=qq&menu=yes">
-                <img border="0" src="http://wpa.qq.com/pa?p=2:{$xq_table.user_info_QQ}:42" alt="在线咨询" title="在线咨询" /></a></p></dd>
+        <dd>商&nbsp;&nbsp;&nbsp;&nbsp;家：<span>
+    <a title="{$dz_table.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$dz_table.user_info_id}" target="_blank">
+        {$dz_table.user_info_name}</a></span></dd>
+        <dd>品&nbsp;&nbsp;&nbsp;&nbsp;牌：{$dz_table.dz_info_brand}</dd>
+        <dd>价&nbsp;&nbsp;&nbsp;&nbsp;格：<b>￥{$dz_table.dz_info_price}</b></dd>
+        <dd>商铺地址：<a href="{$dz_table.user_info_web}" target="_blank">{$dz_table.user_info_web}</a></dd>
+        <dd>更新时间：{$dz_table.dz_info_date}&nbsp;&nbsp;|&nbsp;&nbsp;关注度：{$dz_table.dz_info_onclick}次</dd>
+        <dd style="padding-top:14px;"><p>
+            <a href="{site_url('Home/Promotion/AddOrder')}/{$dz_table.dz_info_id}"><img src="{$base_url}static/images/info_tj.gif" alt="提交订单" /></a></p>
+            <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$dz_table.user_info_QQ}&site=qq&menu=yes">
+                <img border="0" src="http://wpa.qq.com/pa?p=2:{$dz_table.user_info_QQ}:42" alt="在线咨询" title="在线咨询"></a></p></dd>
     </dl>
     <ul>
-        <li><b>联系人：</b>{$xq_table.user_info_principal}</li>
-        <li><b>电&nbsp;&nbsp;话：</b>{$xq_table.user_info_telephone}</li>
-        <li><b>传&nbsp;&nbsp;真：</b>{$xq_table.user_info_fax}</li>
-        <li><b>邮&nbsp;&nbsp;箱：</b>{$xq_table.user_info_email}</li>
-        <li><b>地&nbsp;&nbsp;址：</b>{$xq_table.user_info_address}</li>
+        <li><b>联系人：</b>{$dz_table.user_info_principal}</li>
+        <li><b>电&nbsp;&nbsp;话：</b>{$dz_table.user_info_telephone}</li>
+        <li><b>传&nbsp;&nbsp;真：</b>{$dz_table.user_info_fax}</li>
+        <li><b>邮&nbsp;&nbsp;箱：</b>{$dz_table.user_info_email}</li>
+        <li><b>地&nbsp;&nbsp;址：</b>{$dz_table.user_info_address}</li>
     </ul>
 </div>
 
@@ -31,14 +36,14 @@
         <!--01 产品详情-->
         <div class="info_tt"><h3>产品详情</h3></div>
         <div class="info_xx">
-            {$xq_table.xq_info_content}
+            {$dz_table.dz_info_content}
             <div class="null"></div></div>
         <!--02 上下篇-->
         <div class="info_next">
-            <p>↑上一篇：<a title="{$last_table.xq_info_name}" href="{site_url('Home/Demand/ShowInfo')}/{$last_table.xq_info_id}">
-                {$last_table.xq_info_name}</a></p>
-            <p>↓下一篇：<a title="{$next_table.xq_info_name}" href="{site_url('Home/Demand/ShowInfo')}/{$next_table.xq_info_id}">
-                {$next_table.xq_info_name}</a></p>
+            <p>↑上一篇：<a title="{$last_table.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$last_table.dz_info_id}">
+                {$last_table.dz_info_name}</a></p>
+            <p>↓下一篇：<a title="{$next_table.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$next_table.dz_info_id}">
+                {$next_table.dz_info_name}</a></p>
         </div>
         <!--03 相关产品-->
         <div class="null_1"></div>
@@ -46,9 +51,9 @@
         <div class="info_pro">
             <ul>
                 {foreach $about_lists as $a_list}
-                <li><a title="{$a_list.xq_info_name}" href="{site_url('Home/Demand/ShowInfo')}/{$a_list.xq_info_id}" target="_blank">
-                    <img alt="{$a_list.xq_info_name}" src="{$a_list.xq_info_img}" /></a><p>
-                    {$a_list.xq_info_name}</p></li>
+                <li><a title="{$a_list.dz_info_name}" href="{site_url('Home/Promotion/ShowInfo')}/{$a_list.dz_info_id}" target="_blank">
+                    <img alt="{$a_list.dz_info_name}" src="{$a_list.dz_info_img}" /></a><p>
+                    {$a_list.dz_info_name}</p></li>
                 {/foreach}
             </ul>
         </div>
@@ -70,8 +75,8 @@
             <div class="null"></div>
             {foreach $comments_lists as $c_list}
             <dl>
-                <dt>用户：{$c_list.user_info_loginid}&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：{$c_list.xq_comments_date}</dt>
-                <dd>{$c_list.xq_comments_content}</dd>
+                <dt>用户：{$c_list.user_info_loginid}&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：{$c_list.dz_comments_date}</dt>
+                <dd>{$c_list.dz_comments_content}</dd>
             </dl>
             {/foreach}
         </div>
