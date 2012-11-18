@@ -15,6 +15,11 @@ class Model_info_expansion extends CI_Model
     {
         return $this->db->get($this->_table)->result_array();
     }
+    function GetListBy($exp_coulumn)
+    {
+        return $this->db->get_where($this->_table,array('exp_coulumn'=>$exp_coulumn))->result_array();
+    }
+
     function Add($info)
     {
         return $this->db->insert($this->_table,$info);

@@ -14,6 +14,12 @@ class BuildMaterials extends MY_Controller
 
     function Index()
     {
+        $jc_coulumn_lists = $this->model_jc_coulumn->GetList();
+        $jc_sort_lists = $this->model_jc_sort->GetList();
+        $jc_info_lists = $this->model_jc_info->GetList();
+        $this->assign('jc_coulumn_lists',$jc_coulumn_lists);
+        $this->assign('jc_sort_lists',$jc_sort_lists);
+        $this->assign('jc_info_lists',$jc_info_lists);
         $this->display('Home/BuildingMaterials/Index.html');
     }
 }

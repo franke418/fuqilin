@@ -1,10 +1,8 @@
 {extends file='../Master.html'}
-{block name=title}Ω®≤ƒø‚{/block}
+{block name=title}Âª∫ÊùêÂ∫ì{/block}
 {block name=body}
-<!-- ◊”“≥≤ø∑÷****** -->
 <div class="box">
     {foreach $jc_coulumn_lists as $c_list}
-    <!--Ω®≤ƒ∑÷¿‡-->
     <div class="null_1"></div>
     <div class="title2">
         <h3>
@@ -20,7 +18,7 @@
             {/foreach}
         </h4>
         <h5>
-            <a title="»´≤ø∑÷¿‡" href="{site_url('Home/BuildingMaterials/ShowCoulumn')}/{$c_list.jc_coulumn_id}">»´≤ø∑÷¿‡</a></h5>
+            <a title="" href="{site_url('Home/BuildingMaterials/ShowCoulumn')}/{$c_list.jc_coulumn_id}"> Êü•ÁúãÂÖ®ÈÉ®</a></h5>
     </div>
     <div class="jc_ku">
         <h3>
@@ -31,10 +29,12 @@
             {if $i_list.jc_info_coulumn eq $c_list.jc_coulumn_id}
             {for $foo=1 to 8}
             <li><a title="{$i_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$i_list.jc_info_id}">
-                <img alt="{$i_list.jc_info_name}" src="{$i_list.jc_info_img}" /></a><p>
-                <a title="{$i_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$i_list.jc_info_id}">
-                    {$i_list.jc_info_name}</a></p>
-                <span>£§<b>{$i_list.jc_info_price}</b></span></li>
+                <img alt="{$i_list.jc_info_name}" src="{$i_list.jc_info_img}"/></a>
+
+                <p>
+                    <a title="{$i_list.jc_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$i_list.jc_info_id}">
+                        {$i_list.jc_info_name}</a></p>
+                <span>Ôø•<b>{$i_list.jc_info_price}</b></span></li>
             {/for}
             {/if}
             {/foreach}

@@ -1,0 +1,80 @@
+{extends file='../layout.html'}
+{block name=title}装饰分类管理{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>装饰分类管理</h2>
+
+        <table id="rounded-corner">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>排序</th>
+                <th>简介</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $list as $ls }
+            <tr class="odd">
+                <form method="POST" action="{site_url('Manage/Category/DecorationDel')}">
+                    <td style="width:10%">{$ls.zs_sort_id}</td>
+                    <td style="width:20%">{$ls.zs_sort_name}</td>
+                    <td style="width:10%">{$ls.zs_sort_number}</td>
+                    <td style="width:20%">{$ls.zs_sort_text}</td>
+                    <td style="width:20%"><input value="删除" type="submit"/></td>
+                    <input type="hidden" value="{$ls.zs_sort_id}" name="id"/>
+                </form>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        {if isset($smarty.session.message.category)}
+        {if $smarty.session.message.category.type eq 'error'}
+        <p class="red">{$smarty.session.message.category.msg}</p>
+        {else}
+        <p class="green">{$smarty.session.message.category.msg}</p>
+        {/if}
+        {/if}
+        <br/>
+
+        <h2>添加装饰分类</h2>
+        <div class="form">
+            <!--zs_sort_id         分类ID
+            zs_sort_name       分类名称
+            zs_sort_number     分类排序值
+            zs_sort_img        分类图片
+            zs_sort_text       分类简介-->
+            <form method="POST" action="{site_url('Manage/Category/DecorationAdd')}">
+                <div class="form_row">
+                    <label>分类名称:</label>
+                    <input type="text" class="form_input" name="zs_sort_name"/>
+                </div>
+
+                <div class="form_row">
+                    <label>分类排序值:</label>
+                    <input type="text" class="form_input" name="zs_sort_number"/>
+                </div>
+                <div class="form_row">
+                    <label>分类图片:</label>
+                    <input type="file" class="form_input" name="zs_sort_img"/>
+                </div>
+                <div class="form_row">
+                    <label>分类简介:</label>
+                    <input type="text" class="form_input" name="zs_sort_text"/>
+                </div>
+                <div class="form_row">
+                    <input type="submit" class="form_submit" value="添加"/>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!-- end of right content-->
+
+{/block}
+
+<!--end of center_content-->
+
