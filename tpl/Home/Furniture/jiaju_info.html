@@ -16,7 +16,7 @@ name=body}
         <dd>商铺地址：<a href="{$jj_table.user_info_web}" target="_blank">{$jj_table.user_info_web}</a></dd>
         <dd>更新时间：{$jj_table.jj_info_date}&nbsp;&nbsp;|&nbsp;&nbsp;关注度：{$jj_table.jj_info_onclick}次</dd>
         <dd style="padding-top:14px;"><p>
-            <a href="{site_url('Home/BuildingMaterials/AddOrder')}/{$jj_table.jj_info_id}"><img src="{$base_url}static/images/info_tj.gif" alt="提交订单" /></a></p>
+            <a href="{site_url('Home/Furniture/AddOrder')}/{$jj_table.jj_info_id}"><img src="{$base_url}static/images/info_tj.gif" alt="提交订单" /></a></p>
             <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$jj_table.user_info_QQ}&site=qq&menu=yes">
                 <img border="0" src="http://wpa.qq.com/pa?p=2:{$jj_table.user_info_QQ}:42" alt="在线咨询" title="在线咨询"></a></p></dd>
     </dl>
@@ -40,9 +40,9 @@ name=body}
             <div class="null"></div></div>
         <!--02 上下篇-->
         <div class="info_next">
-            <p>↑上一篇：<a title="{$last_table.jj_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$last_table.jj_info_id}">
+            <p>↑上一篇：<a title="{$last_table.jj_info_name}" href="{site_url('Home/Furniture/ShowInfo')}/{$last_table.jj_info_id}">
                 {$last_table.jj_info_name}</a></p>
-            <p>↓下一篇：<a title="{$next_table.jj_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$next_table.jj_info_id}">
+            <p>↓下一篇：<a title="{$next_table.jj_info_name}" href="{site_url('Home/Furniture/ShowInfo')}/{$next_table.jj_info_id}">
                 {$next_table.jj_info_name}</a></p>
         </div>
         <!--03 相关产品-->
@@ -51,7 +51,7 @@ name=body}
         <div class="info_pro">
             <ul>
                 {foreach $about_lists as $a_list}
-                <li><a title="{$a_list.jj_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$a_list.jj_info_id}" target="_blank">
+                <li><a title="{$a_list.jj_info_name}" href="{site_url('Home/Furniture/ShowInfo')}/{$a_list.jj_info_id}" target="_blank">
                     <img alt="{$a_list.jj_info_name}" src="{$a_list.jj_info_img}" /></a><p>
                     {$a_list.jj_info_name}</p></li>
                 {/foreach}
