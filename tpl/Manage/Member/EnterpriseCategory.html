@@ -1,0 +1,83 @@
+{extends file='../layout.html'}
+{block name=title}企业分类管理{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>企业分类管理</h2>
+        <table id="rounded-corner">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>分类名称</th>
+                <th>分类排序值</th>
+                <th>分类图片</th>
+                <th>所属栏目</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $list as $ls }
+            <tr class="odd">
+                <form method="POST" action="{site_url('Manage/Memeber/EnterpriseCategoryDel')}">
+                    <td style="width:10%">{$ls.user_sort_id}</td>
+                    <td style="width:20%">{$ls.user_sort_name}</td>
+                    <td style="width:10%">{$ls.user_sort_number}</td>
+                    <td style="width:25%">{$ls.user_sort_img}</td>
+                    <td style="width:10%">{$ls.user_sort_cid}</td>
+                    <td style="width:25%"><input value="删除" type="submit"/></td>
+                    <input type="hidden" value="{$ls.user_sort_id}" name="id"/>
+                </form>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        {if isset($smarty.session.message.discount)}
+        {if $smarty.session.message.discount.type eq 'error'}
+        <p class="red">{$smarty.session.message.discount.msg}</p>
+        {else}
+        <p class="green">{$smarty.session.message.discount.msg}</p>
+        {/if}
+        {/if}
+        <br/>
+
+        <h2>添加企业分类</h2>
+
+        <div class="form">
+            {form_open_multipart(site_url('Manage/Member/EnterpriseCategoryAdd'))}
+                <div class="form_row">
+                    <label>分类名称:</label>
+                    <input type="text" class="form_input" name="user_sort_name"/>
+                </div>
+
+                <div class="form_row">
+                    <label>分类排序值:</label>
+                    <input type="text" class="form_input" name="user_sort_number"/>
+                </div>
+
+                <div class="form_row">
+                    <label>分类图片:</label>
+                    <input type="file" class="form_input" name="user_sort_img"/>
+                </div>
+                <div class="form_row">
+                    <label>所属栏目:</label>
+                    <select name="user_sort_cid">
+                        {foreach $c_list as $c}
+                        <option value="{$c.user_coulumn_id}">{$c.user_coulumn_name}</option>
+                        {/foreach}
+                    </select>
+                </div>
+
+                <div class="form_row">
+                    <input type="submit" class="form_submit" value="添加"/>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!-- end of right content-->
+
+{/block}
+
+<!--end of center_content-->
+

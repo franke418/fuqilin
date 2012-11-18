@@ -20,19 +20,12 @@ class MY_Controller extends CI_Controller
      */
     function _load_constants()
     {
-        $this->load->driver('cache',array('adapter' => 'file', 'backup' => 'file'));
-        if(!$this->cache->get('site_title'))
-        {
-            $site_title = $this->model_web_info->get_single_info('title');
-            $site_keywords = $this->model_web_info->get_single_info('keywords');
-            $site_desc = $this->model_web_info->get_single_info('description');
-            $this->cache->save('site_title',$site_title,3000);
-            $this->cache->save('site_keywords',$site_keywords,3000);
-            $this->cache->save('site_desc',$site_desc,3000);
-        }
-        $this->assign('site_title',$this->cache->get('site_title'));
-        $this->assign('site_keywords',$this->cache->get('site_keywords'));
-        $this->assign('site_desc',$this->cache->get('site_desc'));
+        $site_title = $this->model_web_info->get_single_info('title');
+        $site_keywords = $this->model_web_info->get_single_info('keywords');
+        $site_desc = $this->model_web_info->get_single_info('description');
+        $this->assign('site_title',$site_title);
+        $this->assign('site_keywords',$site_keywords);
+        $this->assign('site_desc',$site_desc);
     }
 
     /**
@@ -89,3 +82,4 @@ class MY_Controller extends CI_Controller
 }
 
 require_once 'Admin_Controller.php';
+require_once 'Enterprise_Controller.php';

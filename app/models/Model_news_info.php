@@ -16,6 +16,13 @@ class Model_news_info extends CI_Model
         return $this->db->get($this->_table, $pageSize, ($pageNo - 1) * $pageSize)->result_array();
     }
 
+    function GetTop($cid,$count)
+    {
+        $condition = array('news_info_sort'=>$cid);
+        $this->db->order_by('news_info_date','desc');
+        return $this->db->get_where($this->_table,$condition,$count)->result_array();
+    }
+
     function Add($info)
     {
         return $this->db->insert($this->_table, $info);

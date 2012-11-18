@@ -21,7 +21,7 @@ class Home extends MY_Controller
                 $_SESSION['message']['login'] = array('type' => 'error', 'msg' => '用户名或密码错误！');
             } else {
                 $_SESSION['CURRENT_ADMIN'] = $ret['instance'];
-                $this->model_admin_info->update_login_info();
+                //$this->model_admin_info->update_login_info();
                 redirect(site_url('Manage/Admin/Index'));
             }
 
