@@ -1,0 +1,107 @@
+{extends file='../layout.html'}
+{block name=title}新闻信息管理{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>新闻信息管理</h2>
+        <table id="rounded-corner">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>标题</th>
+                <th>排序</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $list as $ls }
+            <tr class="odd">
+                <form method="POST" action="{site_url('Manage/News/InfoDel')}">
+                    <td style="width:25%">{$ls.news_info_id}</td>
+                    <td style="width:40%">{$ls.news_info_name}</td>
+                    <td style="width:10%">{$ls.news_info_number}</td>
+                    <td style="width:25%"><input value="删除" type="submit"/></td>
+                    <input type="hidden" value="{$ls.news_info_id}" name="news_info_id"/>
+                </form>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        {$p_link}
+        {if isset($smarty.session.message.news)}
+        {if $smarty.session.message.news.type eq 'error'}
+        <p class="red">{$smarty.session.message.news.msg}</p>
+        {else}
+        <p class="green">{$smarty.session.message.news.msg}</p>
+        {/if}
+        {/if}
+        <br/>
+
+        <h2>添加新闻信息</h2>
+
+        <div class="form">
+            {form_open_multipart(site_url('Manage/News/InfoAdd'))}
+            <div class="form_row">
+                <label>标题:</label>
+                <input type="text" class="form_input" name="news_info_name"/>
+            </div>
+
+            <div class="form_row">
+                <label>排序:</label>
+                <input style="width: 100px;" type="text" class="form_input" name="news_info_number"/>
+            </div>
+            <div class="form_row">
+                <label>分类:</label>
+                <select name="news_info_sort">
+                    {foreach $c_list as $c}
+                    <option value="{$c.news_sort_id}">{$c.news_sort_text}</option>
+                    {/foreach}
+                </select>
+            </div>
+            <div class="form_row">
+                <label>图片:</label>
+                <input type="file" class="form_input" name="news_info_img"/>
+            </div>
+
+            <div class="form_row">
+                <label>简介:</label>
+                <input type="text" class="form_input" name="news_info_text"/>
+            </div>
+
+            <div class="form_row">
+                <label>详细描述:</label>
+                <textarea cols="80" rows="80" class="form_textarea" id="editorContainer" name="news_info_content"></textarea>
+            </div>
+
+            <div class="form_row">
+                <label>是否推荐:</label>
+                <input type="checkbox" name="news_info_hot"/>
+            </div>
+            <div class="form_row">
+                <input type="submit" class="form_submit" value="添加"/>
+            </div>
+
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!-- end of right content-->
+<script type="text/javascript" src="{$base_url}static/js/kindeditor-min.js"></script>
+<script type="text/javascript" src="{$base_url}static/js/lang/zh_CN.js"></script>
+        {literal}
+
+<script type="text/javascript">
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('#editorContainer',{
+            width : '500px',
+            height:'400px'
+        });
+    });
+</script>
+{/literal}
+{/block}
+
+<!--end of center_content-->
+

@@ -11,4 +11,23 @@ class Model_news_info extends CI_Model
 {
     protected $_table = 'news_info';
 
+    function GetList($pageNo, $pageSize)
+    {
+        return $this->db->get($this->_table, $pageSize, ($pageNo - 1) * $pageSize)->result_array();
+    }
+
+    function Add($info)
+    {
+        return $this->db->insert($this->_table, $info);
+    }
+
+    function GetCount()
+    {
+        return $this->db->count_all_results($this->_table);
+    }
+
+    function Del($id)
+    {
+        return $this->db->delete($this->_table, array('news_info_id' => $id));
+    }
 }

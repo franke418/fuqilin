@@ -33,7 +33,7 @@ class Discount extends Admin_Controller
 
     function Info($pageNo = 1)
     {
-        $pageSize = 1;
+        $pageSize = 10;
         $this->load->library('pagination');
 
         $config['uri_segment']=4;
