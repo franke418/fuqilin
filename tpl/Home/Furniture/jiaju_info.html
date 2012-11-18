@@ -1,0 +1,125 @@
+{extends file='../Master.html'} {block name=title}{$web_title}-家具库{/block} {block
+name=body}
+<!-- 子页部分****** -->
+<div id="sub_top"><h3>{$web_map}</h3></div>
+<!--产品信息-->
+<div id="info_box">
+
+    <h2><img alt="{$jj_table.jj_info_name}" src="{$jj_table.jj_info_img}" /></h2>
+    <h1>{$jj_table.jj_info_name}</h1>
+    <dl>
+        <dd>商&nbsp;&nbsp;&nbsp;&nbsp;家：<span>
+    <a title="{$jj_table.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$jj_table.user_info_id}" target="_blank">
+        {$jj_table.user_info_name}</a></span></dd>
+        <dd>品&nbsp;&nbsp;&nbsp;&nbsp;牌：{$jj_table.jj_info_brand}</dd>
+        <dd>价&nbsp;&nbsp;&nbsp;&nbsp;格：<b>￥{$jj_table.jj_info_price}</b></dd>
+        <dd>商铺地址：<a href="{$jj_table.user_info_web}" target="_blank">{$jj_table.user_info_web}</a></dd>
+        <dd>更新时间：{$jj_table.jj_info_date}&nbsp;&nbsp;|&nbsp;&nbsp;关注度：{$jj_table.jj_info_onclick}次</dd>
+        <dd style="padding-top:14px;"><p>
+            <a href="{site_url('Home/BuildingMaterials/AddOrder')}/{$jj_table.jj_info_id}"><img src="{$base_url}static/images/info_tj.gif" alt="提交订单" /></a></p>
+            <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$jj_table.user_info_QQ}&site=qq&menu=yes">
+                <img border="0" src="http://wpa.qq.com/pa?p=2:{$jj_table.user_info_QQ}:42" alt="在线咨询" title="在线咨询"></a></p></dd>
+    </dl>
+    <ul>
+        <li><b>联系人：</b>{$jj_table.user_info_principal}</li>
+        <li><b>电&nbsp;&nbsp;话：</b>{$jj_table.user_info_telephone}</li>
+        <li><b>传&nbsp;&nbsp;真：</b>{$jj_table.user_info_fax}</li>
+        <li><b>邮&nbsp;&nbsp;箱：</b>{$jj_table.user_info_email}</li>
+        <li><b>地&nbsp;&nbsp;址：</b>{$jj_table.user_info_address}</li>
+    </ul>
+</div>
+
+<!--内容-->
+<div class="null"></div>
+<div class="box">
+    <div class="left1">
+        <!--01 产品详情-->
+        <div class="info_tt"><h3>产品详情</h3></div>
+        <div class="info_xx">
+            {$jj_table.jj_info_content}
+            <div class="null"></div></div>
+        <!--02 上下篇-->
+        <div class="info_next">
+            <p>↑上一篇：<a title="{$last_table.jj_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$last_table.jj_info_id}">
+                {$last_table.jj_info_name}</a></p>
+            <p>↓下一篇：<a title="{$next_table.jj_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$next_table.jj_info_id}">
+                {$next_table.jj_info_name}</a></p>
+        </div>
+        <!--03 相关产品-->
+        <div class="null_1"></div>
+        <div class="info_tt"><h3>相关产品</h3></div>
+        <div class="info_pro">
+            <ul>
+                {foreach $about_lists as $a_list}
+                <li><a title="{$a_list.jj_info_name}" href="{site_url('Home/BuildingMaterials/ShowInfo')}/{$a_list.jj_info_id}" target="_blank">
+                    <img alt="{$a_list.jj_info_name}" src="{$a_list.jj_info_img}" /></a><p>
+                    {$a_list.jj_info_name}</p></li>
+                {/foreach}
+            </ul>
+        </div>
+        <!--04 评论-->
+        <div class="null_1"></div>
+        <div id="sub_pl">
+            <div class="sub_pl_tt"><h3>|&nbsp;我要评论</h3><h4><a href="#">已有<b>{$comments_count}</b>条评论</a></h4></div>
+            <form id="form1" name="form1" method="post" action="">
+                <div class="sub_pl_nr">
+                    <p><textarea name="textarea" class="textarea11"></textarea></p>
+                    <ul>
+                        <li>验证码：</li>
+                        <li><input name="textarea2" type="text" value="" class="input11" /></li>
+                        <li>&nbsp;<img src="images/07.jpg" />&nbsp;<a href="#">看不清楚？换一张</a></li>
+                        <li style="float:right;"><input type="submit" name="Submit" value="提交评论" class="submit11" /></li>
+                    </ul>
+                </div>
+            </form>
+            <div class="null"></div>
+            {foreach $comments_lists as $c_list}
+            <dl>
+                <dt>用户：{$c_list.user_info_loginid}&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：{$c_list.jj_comments_date}</dt>
+                <dd>{$c_list.jj_comments_content}</dd>
+            </dl>
+            {/foreach}
+        </div>
+
+    </div><!--left-->
+
+    <div class="right">
+        <!--黄金展位-->
+        <div id="tuig">
+            <div class="tuig_tt"><h3>黄金展位</h3><h4><a href="#">加入推广</a></h4></div>
+            <ul>
+                <li><p><a href="#"><img src="images/01.jpg"></a><b>产品名称标题放到这里01</b></p><span><a href="#">曲靖华赛卫浴有限公司01</a></span></li>
+                <li><p><a href="#"><img src="images/02.jpg"></a><b>产品名称标题放到这里02</b></p><span><a href="#">曲靖华赛卫浴有限公司02</a></span></li>
+                <li><p><a href="#"><img src="images/03.jpg"></a><b>产品名称标题放到这里03</b></p><span><a href="#">曲靖华赛卫浴有限公司03</a></span></li>
+            </ul>
+        </div>
+        <!--广告-->
+        <div class="add03"><a href="#"><img src="images/add_04.gif" alt="曲靖团购会,邀您折上折"></a></div>
+        <!--VIP企业-->
+        <div id="vip">
+            <h3>
+                <span>VIP企业</span><b><a href="{site_url('Home/Web/ShowInfo')}/7"><u>如何加入</u>？</a></b></h3>
+            <ul>
+                {foreach $company_lists as $c_list}
+                <li>・<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
+                        target="_blank"> {$c_list.user_info_name}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="null"></div>
+        <!--企业排行榜-->
+        <div id="paih">
+            <div class="paih_tt">
+                <h3>
+                    曲靖企业排行榜<span>&nbsp;TOP10</span></h3>
+            </div>
+            <ul>
+                {foreach $company_byclick_lists as $c_c_list}
+                <li><span><a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
+                             target="_blank">{$c_list.user_info_name}</a></span><b>{$c_list.user_info_onclick}</b></li>
+                {/foreach}
+            </ul>
+        </div>
+    </div><!--right-->
+    <div class="null"></div></div><!--box-->
+{/block}
