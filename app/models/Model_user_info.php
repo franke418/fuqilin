@@ -23,4 +23,11 @@ class Model_user_info extends CI_Model
         $condition = array('user_info_type' => $sign);
         return $this->db->get_where($this->_table, $condition, $pageSize, ($pageNo - 1) * $pageSize)->result_array();
     }
+
+    function GetVipList($count)
+    {
+        $condtion = array('user_info_type' => 1, 'user_info_vip' => 1, 'user_info_check' => 1);
+        $this->db->order_by('user_info_number', 'desc');
+        $this->db->get_where($this->_table, $condtion, $count)->result_array();
+    }
 }

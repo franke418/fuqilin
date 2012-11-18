@@ -10,4 +10,9 @@ class Model_jc_info extends CI_Model
 {
     protected $_table = 'jc_info';
 
+    function GetListByEId($eid)
+    {
+        //jc_info_addid
+        return $this->db->get_where($this->_table, array('jc_info_addid' => $eid))->result_array();
+    }
 }

@@ -56,6 +56,14 @@
                         {/foreach}
                     </select>
                 </div>
+            <div class="form_row">
+                <label>扩展分类:</label>
+                <select name="dz_info_sort">
+                    {foreach $ex_list as $e}
+                    <option value="{$e.exp_id}">{$e.exp_name}</option>
+                    {/foreach}
+                </select>
+            </div>
                 <div class="form_row">
                     <label>图片:</label>
                     <input type="file" class="form_input" name="dz_info_img" />

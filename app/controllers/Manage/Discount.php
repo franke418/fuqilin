@@ -47,8 +47,10 @@ class Discount extends Admin_Controller
         $list = $this->model_dz_info->GetList($pageNo, $pageSize);
         //var_dump($list);exit;
         $c_list = $this->model_dz_sort->GetList();
+        $ex_list = $this->model_info_expansion->GetList();
         $this->assign('list', $list);
         $this->assign('c_list', $c_list);
+        $this->assign('ex_list', $ex_list);
         $this->assign('p_link',$this->pagination->create_links());
         $this->display('Manage/Discount/Info.html');
     }

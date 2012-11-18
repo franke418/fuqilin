@@ -11,4 +11,12 @@ class Model_info_expansion extends CI_Model
 {
     protected $_table = 'info_expansion';
 
+    function GetList()
+    {
+        return $this->db->get($this->_table)->result_array();
+    }
+    function Add($info)
+    {
+        return $this->db->insert($this->_table,$info);
+    }
 }
