@@ -76,7 +76,7 @@
     </div>
     <div class="right">
         <div id="zhuce">
-            <h3><a title="免费注册" href="{site_url('Home/Register/Index')}">免费注册</a></h3>
+            <h3><a title="免费注册" href="{site_url('Account/Register/Choose')}">免费注册</a></h3>
             <h4><a title="发布二手供求信息" href="{site_url('Home/UsedMarket/AddInfo')}">发布二手供求信息</a></h4>
         </div>
         <div id="jiaru">
@@ -155,7 +155,7 @@
     <h4>
         {foreach $jc_sort_hot_lists as $jcs_hot_list}
             <span><a title="{$jcs_hot_list.jc_sort_name}" href="{site_url('Home/BuildingMaterials/ShowSort')}/{$jcs_hot_list.jc_sort_id}">
-                {$jcs_hot_list.jc_sort_name})}</a></span>
+                {$jcs_hot_list.jc_sort_name}</a></span>
         {/foreach}
     </h4>
 </div>

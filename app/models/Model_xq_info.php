@@ -10,5 +10,8 @@
 class Model_xq_info extends CI_Model
 {
     protected $_table = 'xq_info';
-
+    function GetList()
+    {
+        return $this->db->get($this->_table)->result_array();
+    }
 }

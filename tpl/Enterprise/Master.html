@@ -18,14 +18,15 @@
                 <li><a href="/">建材网首页</a>&nbsp;|&nbsp;</li>
                 <li><a href="{site_url('Home/BuildingMaterials/Index')}">建材大全</a>&nbsp;|&nbsp;</li>
                 {if isset($smarty.session.IS_LOGGED)}
-                <li><a href="{site_url('Account/Index/Logout')}">退出登录</a></li>
+
                 <li>欢迎回来，
                     {if isset($smarty.session.CURRENT_ENTER)}
                     <a  style="text-decoration: underline" href="{site_url('Enterprise/Manage/Index')}">{$smarty.session.CURRENT_ENTER.user_info_loginid}</a>
                     {else}
-                    <a  style="text-decoration: underline" href="{site_url('Member/Manage/Index')}"{$smarty.session.CURRENT_MEMBER.user_info_loginid}</a>
-                    {/if}
+                    <a  style="text-decoration: underline" href="{site_url('Member/Manage/Index')}">{$smarty.session.CURRENT_MEMBER.user_info_loginid}</a>
+                    {/if}&nbsp;|&nbsp;
                 </li>
+                <li><a href="{site_url('Account/Index/Logout')}">退出登录</a>&nbsp;|&nbsp;</li>
                 {else}
                 <li>用户登录</li>
                 <form action="{site_url('Account/Index/Login')}" method="POST">

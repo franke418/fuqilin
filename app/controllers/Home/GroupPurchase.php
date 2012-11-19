@@ -14,6 +14,10 @@ class GroupPurchase extends MY_Controller
 
     function Index()
     {
+        $news_tg_lists = $this->db->query("select news_info_id,news_info_name from news_info where news_info_hot=1 and news_info_sort=2 order by news_info_number desc limit 0,10")->result_array();
+        $this->assign('news_tg_lists',$news_tg_lists);
+        $zh_sort_lists = $this->model_zh_sort->GetList();
+        $this->assign('zh_sort_lists',$zh_sort_lists);
         $zs_sort_lists = $this->model_zs_sort->GetList();
         $zs_expansion_lists = $this->model_info_expansion->GetListBy(3);
         $company_lists = $this->model_user_info->GetVipList(4);

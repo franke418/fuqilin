@@ -10,5 +10,8 @@
 class Model_zh_sort extends CI_Model
 {
     protected $_table = 'zh_sort';
-
+    function GetList()
+    {
+        return $this->db->get($this->_table)->result_array();
+    }
 }

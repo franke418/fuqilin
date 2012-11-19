@@ -14,11 +14,13 @@ class Exhibition extends MY_Controller
 
     function Index()
     {
+        $zh_sort_lists = $this->model_zh_sort->GetList();
         $zs_sort_lists = $this->model_zs_sort->GetList();
         $zs_expansion_lists = $this->model_info_expansion->GetListBy(3);
         $company_lists = $this->model_user_info->GetVipList(4);
         $company_byclick_lists = $this->model_user_info->GetTopClick(10);
         // $jc_info_lists = $this->model_jc_info->GetList();
+        $this->assign('zh_sort_lists',$zh_sort_lists);
         $this->assign('web_map','web_map');
         $this->assign('info_count',10);
         $this->assign('company_byclick_lists',$company_byclick_lists);

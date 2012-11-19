@@ -20,25 +20,37 @@
                 $(this).addClass("hover01").siblings().removeClass("hover01");
                 $('#search_column').html("类别：" + $(this).find("a").html());
                 column_id = $(this).attr('column_id');
-                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
+                submit_url = "{site_url('Api/GetJcList/Condition')}"+"/" + column_id + "_" + sort_id + "_" + order_type + "_" + price_type;
                 alert(submit_url);
+                $.get(submit_url,function(data){
+                    alert(data);
+                });
             });
             $('#search_list2 dd').click(function () {
                 $(this).addClass("hover01").siblings().removeClass("hover01");
                 $('#search_sort').html("地区：" + $(this).find("a").html());
                 sort_id = $(this).attr('sort_id');
-                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
+                submit_url ="{site_url('Api/GetJcList/Condition')}"+"/" + column_id + "_" + sort_id + "_" + order_type + "_" + price_type;
                 alert(submit_url);
+                $.get(submit_url,function(data){
+                    alert(data);
+                });
             });
             $('#order_type').change(function () {
                 order_type = $("#order_type").find('option:selected').attr('value'); ;
-                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
+                submit_url = "{site_url('Api/GetJcList/Condition')}"+"/" + column_id + "_" + sort_id + "_" + order_type + "_" + price_type;
                 alert(submit_url);
+                $.get(submit_url,function(data){
+                    alert(data);
+                });
             });
             $('#price_type').change(function () {
                 price_type = $("#price_type").find('option:selected').attr('value'); ;
-                submit_url = submit_path + column_id + "/" + sort_id + "/" + order_type + "/" + price_type;
+                submit_url = "{site_url('Api/GetJcList/Condition')}"+"/" + column_id + "_" + sort_id + "_" + order_type + "_" + price_type;
                 alert(submit_url);
+                $.get(submit_url,function(data){
+                    alert(data);
+                });
             });
         });
     </script>
@@ -118,7 +130,6 @@
                 </dd>
             </dl>
         </div>
-        <!--????��?-->
         <div id="sub_list1">
             {foreach $jc_info_list as $i_list}
             <dl>
@@ -155,14 +166,13 @@
             <div class="null">
             </div>
         </div>
-        <!--???-->
         <div align="center">
             {$info_page}
         </div>
     </div>
     <!--left-->
     <div class="right">
-        <!--????��-->
+
         <div id="tuig">
             <div class="tuig_tt">
                 <h3>
