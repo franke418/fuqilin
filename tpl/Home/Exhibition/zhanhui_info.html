@@ -1,209 +1,117 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>展会详细页 - 曲靖建材网,曲靖本地最大的建材门户网站</title>
-<meta name="keywords" content="曲靖建材,曲靖建材网,曲靖家具,曲靖家居网,曲靖装饰,曲靖装饰装修,曲靖公司,曲靖门户网站" />
-<meta name="description" content="福麒麟(曲靖建材网)是曲靖本土最大的建材行业门户网站,范围覆盖曲靖建材、曲靖家具、曲靖装饰三大行业,提供最新建材、家具、装饰案例等信息,团购、促销、二手、企业库为一体的综合性行业门户网站.更多信息可登陆曲靖建材网" />
-<link href="css/index.css" type="text/css" rel="stylesheet">
-</head>
-
-<body>
-<!-- 头部开始****** -->
-<div id="head">
-  <div id="header">
-  <form name="form1" method="post" action="">
-    <ul>
-	  <li><a href="../Index/index.html">建材网首页</a>&nbsp;|&nbsp;</li>
-	  <li><a href="../BuildingMaterials/index.html">建材大全</a>&nbsp;|&nbsp;</li>
-	  <li>用户登录</li>
-	  <li><input class="input01" type="text" value="用户名" onblur="if(this.value=='') this.value='用户名'" onfocus="if(this.value =='用户名' ) this.value=''"></li>
-	  <li><input class="input01" type="password" value="***" onblur="if(this.value=='') this.value='***'" onfocus="if(this.value =='***' ) this.value=''"></li>
-	  <li><input class="button01" type="submit" name="Submit" value=""></li>
-	  <li><span><a href="zhuce.html">新用户注册</a></span></li>
-	</ul>
-	<h3>
-	  <span><a href="../Web/about.html">关于我们</a>&nbsp;|&nbsp;</span>
-	  <span><a href="../Web/about.html">联系我们</a>&nbsp;|&nbsp;</span>
-	  <span><b><a href="../Web/about.html">广告服务</a></b></span>
-	</h3>
-  </form>
-  </div>
-</div>
-<div id="top">
-  <h1><a href="../Index/index.html"><img src="images/logo.gif" alt="福麒麟,曲靖建材网"></a></h1>
-  <dl>
-    <dt><b>热门搜索：</b><span><a href="#">水管</a></span><span><a href="#">油漆涂料</a></span><span><a href="#">显示二级分类名</a></span></dt>
-	<dd><input class="input02" type="text" value="输入您要查找的产品名..." onblur="if(this.value=='') this.value='输入您要查找的产品名...'" onfocus="if(this.value =='输入您要查找的产品名...' ) this.value=''"></dd>
-	<dd><input class="button02" type="submit" name="Submit" value=""></dd>
-  </dl>
-</div>
-<div id="nav">
-  <ul>
-    <li class="one1"><a href="../Index/index.html">首&nbsp;页</a></li>
-	<li class="one1"><a href="../BuildingMaterials/index.html">建材</a></li>
-	<li class="one1"><a href="../Furniture/index.html">家具</a></li>
-	<li class="one1"><a href="../Decoration/index.html">装饰</a></li>
-	<li class="one1"><a href="../Demand/index.html">需求</a></li>
-	<li class="one1"><a href="index.html">展会</a></li>
-	<li class="one1"><a href="../GroupPurchase/index.html">团购</a></li>
-	<li class="one2"><a href="../Promotion/cuxiao.html">打折促销</a></li>
-	<li class="one2"><a href="../UsedMarket/ershou.html">二手市场</a></li>
-	<li class="one2"><a href="../News/news.html">新闻资讯</a></li>
-	<li class="one2"><a href="../Enterprise/company.html">企业库</a></li>
-  </ul>
-</div>                                                       
-
+{extends file='../Master.html'}
+{block name=title}{$web_title}-展会信息{/block}
+{block name=body}
 <!-- 子页部分****** -->
-<div id="sub_top"><h3>您当前所在的位置：<a href="#">曲靖建材网</a> - <a href="#">建材展会</a> - <b>展会详细</b></h3></div>
+<div id="sub_top"><h3>{$web_map}</h3></div>
 <!--内容-->
 <div class="box">
-<div class="left1">
-  <!--01 展会简述-->
-  <div id="sub_list2">
-    <dl>
-      <dt><img src="images/03.jpg"></dt>
-	  <dd class="two5">
-	    <h3>展会信息名称标题在这显示01（每页10条）</h3>		
-		<p>主办单位：曲靖建材网 www.fuqinlin.com</p>
-		<p>参展企业：<u>12家</u></p>
-		<h4>展会所属：建材展会&nbsp;&nbsp;|&nbsp;&nbsp;关注度：10215次&nbsp;&nbsp;|&nbsp;&nbsp;更新时间：2012-10-12</h4>
-	  </dd>
-    </dl>
-  </div>
-  <!--02 参展产品-->
-  <div class="info_tt"><h3>参展产品</h3></div>
-  <div class="info_pro">
-    <ul>
-      <li><a href="#"><img src="images/01.jpg"></a><p>产品名称放到这显示01</p></li>
-	  <li><a href="#"><img src="images/02.jpg"></a><p>产品名称放到这显示02</p></li>
-	  <li><a href="#"><img src="images/01.jpg"></a><p>产品名称放到这显示03</p></li>
-	  <li><a href="#"><img src="images/02.jpg"></a><p>产品名称放到这显示04</p></li>
-	  <li><a href="#"><img src="images/01.jpg"></a><p>产品名称放到这显示01</p></li>
-	  <li><a href="#"><img src="images/02.jpg"></a><p>产品名称放到这显示02</p></li>
-	  <li><a href="#"><img src="images/01.jpg"></a><p>产品名称放到这显示03</p></li>
-	  <li><a href="#"><img src="images/02.jpg"></a><p>产品名称放到这显示04</p></li>
-	</ul>
-  </div>
-   <!--03 参展企业-->
-  <div class="null_1"></div>
-  <div class="info_tt"><h3>参展企业</h3></div>
-  <div class="info_xx">
-·公司名称后台编辑放到这里01<br />
-·公司名称后台编辑放到这里02<br />
-·公司名称后台编辑放到这里03<br />
-·公司名称后台编辑放到这里04<br />
-·公司名称后台编辑放到这里05<br />
-  </div>
-  <!--04 展会详情-->
-  <div class="info_tt"><h3>展会详情</h3></div>
-  <div class="info_xx">
-曲靖德功润经贸有限责任公司成立于1968年，是大厂水利局改制企业占地128亩，总投资金额达3000余万曲靖德功润经贸有限责任公司成立于1968年，是大厂水利局改制企业占地128亩，总投资金额达3000余万曲靖德功润经贸有限责任公司成立于1968年，是大厂水利局改制企业占地128亩，总投资金额达3000余万曲靖德功润经贸有限责任公司成立于1968年，是大厂水利局改制企业占地128亩，总投资金额达3000余万
-<div class="null"></div></div> 
-  <!--05 上下篇-->
-  <div class="info_next">
-    <p>↑上一篇：<a href="#">这是中国乃至全球最为优秀的技术团队</a></p>
-	<p>↓下一篇：<a href="#">这是中国乃至全球最为优秀的技术团队</a></p>
-  </div>  
-  <!--04 评论-->
-  <div class="null_1"></div>
-  <div id="sub_pl">
-	<div class="sub_pl_tt"><h3>|&nbsp;我要评论</h3><h4><a href="#">已有<b>265</b>条评论</a></h4></div>
-	<form id="form1" name="form1" method="post" action="">
-	<div class="sub_pl_nr">
-	  <p><textarea name="textarea" class="textarea11"></textarea></p>
-	  <ul>
-	    <li>验证码：</li>
-		<li><input name="textarea2" type="text" value="" class="input11" /></li>
-		<li>&nbsp;<img src="images/07.jpg" />&nbsp;<a href="#">看不清楚？换一张</a></li>
-		<li style="float:right;"><input type="submit" name="Submit" value="提交评论" class="submit11" /></li>
-	  </ul>
-	 </div>
-	</form>	
-	<div class="null"></div>
-	<dl>
-	  <dt>用户：网络用户&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：2012-05-24</dt>
-	  <dd>精致的勾花衣身，亮片装饰01。</dd>
-	</dl>
-	<dl>
-	  <dt>用户：网络用户&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：2012-05-24</dt>
-	  <dd>精致的勾花衣身，亮片装饰02。</dd>
-	</dl>
-	<dl>
-	  <dt>用户：网络用户&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：2012-05-24</dt>
-	  <dd>精致的勾花衣身，亮片装饰02。</dd>
-	</dl>
-  </div>
- 
-</div><!--left-->
+    <div class="left1">
+        <!--01 展会简述-->
+        <div id="sub_list2">
+            <dl>
+                <dt><img alt="{$zh_table.zh_info_name}" src="{$zh_table.zh_info_img}" /></dt>
+                <dd class="two5">
+                    <h3>{$zh_table.zh_info_name}</h3>
+                    <p>主办单位：{$zh_table.zh_info_unit}</p>
+                    <p>参展企业：<u>{$zh_table.zh_info_member}</u></p>
+                    <h4>展会所属：{$zh_table.zh_sort_name}&nbsp;&nbsp;|&nbsp;&nbsp;关注度：{$zh_table.zh_info_onclick}次&nbsp;&nbsp;|&nbsp;&nbsp;更新时间：{$zh_table.zh_info_date}</h4>
+                </dd>
+            </dl>
+        </div>
+        <!--02 参展产品-->
+        <div class="info_tt"><h3>参展产品</h3></div>
+        <div class="info_pro">
+            <ul>
+                {foreach $product_lists as $p_list}
+                <li><a title="{$p_list.p_name}" href="{site_url('Home/{$web_url}/ShowInfo')}/{$p_list.p_id}">
+                    <img alt="{$p_list.p_name}" src="{$p_list.p_img}" /></a><p>{$p_list.p_name}</p></li>
+                {/foreach}
+            </ul>
+        </div>
+        <!--03 参展企业-->
+        <div class="null_1"></div>
+        <div class="info_tt"><h3>参展企业</h3></div>
+        <div class="info_xx">
+            {foreach $company_lists as $c_list}
+            ?<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}" target="_blank">
+            {$c_list.user_info_name}</a><br />
+            {/foreach}
+        </div>
+        <!--04 展会详情-->
+        <div class="info_tt"><h3>展会详情</h3></div>
+        <div class="info_xx">
+            {$zh_table.zh_info_content}
+            <div class="null"></div></div>
+        <!--05 上下篇-->
+        <div class="info_next">
+            <p>↑上一篇：<a title="{$last_table.zh_info_name}" href="{site_url('Home/Exhibition/ShowInfo')}/{$last_table.zh_info_id}">
+                {$last_table.zh_info_name}</a></p>
+            <p>↓下一篇：<a title="{$next_table.zh_info_name}" href="{site_url('Home/Exhibition/ShowInfo')}/{$next_table.zh_info_id}">
+                {$next_table.zh_info_name}</a></p>
+        </div>
+        <!--04 评论-->
+        <div class="null_1"></div>
+        <div id="sub_pl">
+            <div class="sub_pl_tt"><h3>|&nbsp;我要评论</h3><h4><a href="#">已有<b>{$comments_count}</b>条评论</a></h4></div>
+            <form id="form1" name="form1" method="post" action="">
+                <div class="sub_pl_nr">
+                    <p><textarea name="textarea" class="textarea11"></textarea></p>
+                    <ul>
+                        <li>验证码：</li>
+                        <li><input name="textarea2" type="text" value="" class="input11" /></li>
+                        <li>&nbsp;<img src="images/07.jpg" />&nbsp;<a href="#">看不清楚？换一张</a></li>
+                        <li style="float:right;"><input type="submit" name="Submit" value="提交评论" class="submit11" /></li>
+                    </ul>
+                </div>
+            </form>
+            <div class="null"></div>
+            {foreach $comments_lists as $c_list}
+            <dl>
+                <dt>用户：{$c_list.user_info_loginid}&nbsp;&nbsp;|&nbsp;&nbsp;评论时间：{$c_list.dz_comments_date}</dt>
+                <dd>{$c_list.dz_comments_content}</dd>
+            </dl>
+            {/foreach}
+        </div>
 
-<div class="right">
-  <!--黄金展位-->
-  <div id="tuig">
-    <div class="tuig_tt"><h3>黄金展位</h3><h4><a href="#">加入推广</a></h4></div>
-    <ul>
-	  <li><p><a href="#"><img src="images/01.jpg"></a><b>产品名称标题放到这里01</b></p><span><a href="#">曲靖华赛卫浴有限公司01</a></span></li>
-	  <li><p><a href="#"><img src="images/02.jpg"></a><b>产品名称标题放到这里02</b></p><span><a href="#">曲靖华赛卫浴有限公司02</a></span></li>
-	  <li><p><a href="#"><img src="images/03.jpg"></a><b>产品名称标题放到这里03</b></p><span><a href="#">曲靖华赛卫浴有限公司03</a></span></li>
-    </ul>  
-  </div>
-  <!--广告-->
-  <div class="add03"><a href="#"><img src="images/add_04.gif" alt="曲靖团购会,邀您折上折"></a></div>
-  <!--VIP企业-->
-  <div id="vip">
-    <h3><span>VIP企业</span><b><a href="#"><u>如何加入</u>？</a></b></h3>
-	<ul>
-	  <li>·<a href="#">年费会员公司名放到这里01</a></li>
-	  <li>·<a href="#">年费会员公司名放到这里02</a></li>
-	  <li>·<a href="#">年费会员公司名放到这里03</a></li>
-	  <li>·<a href="#">年费会员公司名放到这里04</a></li>
-	</ul>
-  </div>
-  <div class="null"></div>
-  <!--企业排行榜-->
-  <div id="paih">
-    <div class="paih_tt"><h3>曲靖企业排行榜<span>&nbsp;TOP10</span></h3></div>
-    <ul>
-      <li><span><a href="#">企业按点击排名放这01</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这02</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这03</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这04</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这05</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这06</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这07</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这08</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这09</a></span><b>2014</b></li>
-	  <li><span><a href="#">企业按点击排名放这10</a></span><b>2014</b></li>
-	</ul>
-  </div>
-</div><!--right-->
-<div class="null"></div></div><!--box-->
+    </div><!--left-->
 
-
-<!-- 版权信息 -->
-<div class="null_2"></div>
-<div id="foot">
-  <ul>
-    <li><a href="#">网站首页</a>&nbsp;|&nbsp;</li>
-    <li><a href="#">建材</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">家具</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">装饰</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">团购</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">需求</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">展会</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">二手</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">打折</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">新闻</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">企业</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">关于我们</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">广告服务</a>&nbsp;|&nbsp;</li>
-	<li><a href="#">联系我们</a></li>
-  </ul>
-  <p>福麒麟（曲靖建材网）版权所有，未经授权禁止转载、摘编、复制或建立镜像.如有违反，追究法律责任！&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">网站统计</a></p>
-  <p>广告业务合作QQ：88888888&nbsp;&nbsp;&nbsp;&nbsp;友情链接合作QQ：88888888&nbsp;&nbsp;&nbsp;&nbsp;手机：13888777777&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><img src="images/qq.gif">&nbsp;在线客服</a></p>
-  <p>Copygight &copy; 2012 福麒麟-曲靖建材网（www.fuqilin.com） All Rights Reserved </p>
-</div>
-
-</body>
-</html>
+    <div class="right">
+        <!--黄金展位-->
+        <div id="tuig">
+            <div class="tuig_tt"><h3>黄金展位</h3><h4><a href="#">加入推广</a></h4></div>
+            <ul>
+                <li><p><a href="#"><img src="images/01.jpg"></a><b>产品名称标题放到这里01</b></p><span><a href="#">曲靖华赛卫浴有限公司01</a></span></li>
+                <li><p><a href="#"><img src="images/02.jpg"></a><b>产品名称标题放到这里02</b></p><span><a href="#">曲靖华赛卫浴有限公司02</a></span></li>
+                <li><p><a href="#"><img src="images/03.jpg"></a><b>产品名称标题放到这里03</b></p><span><a href="#">曲靖华赛卫浴有限公司03</a></span></li>
+            </ul>
+        </div>
+        <!--广告-->
+        <div class="add03"><a href="#"><img src="images/add_04.gif" alt="曲靖团购会,邀您折上折"></a></div>
+        <!--VIP企业-->
+        <div id="vip">
+            <h3>
+                <span>VIP企业</span><b><a href="{site_url('Home/Web/ShowInfo')}/7"><u>如何加入</u>？</a></b></h3>
+            <ul>
+                {foreach $company_lists as $c_list}
+                <li>·<a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
+                        target="_blank"> {$c_list.user_info_name}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="null"></div>
+        <!--企业排行榜-->
+        <div id="paih">
+            <div class="paih_tt">
+                <h3>
+                    曲靖企业排行榜<span>&nbsp;TOP10</span></h3>
+            </div>
+            <ul>
+                {foreach $company_byclick_lists as $c_c_list}
+                <li><span><a title="{$c_list.user_info_name}" href="{site_url('Home/Enterprise/ShowInfo')}/{$c_list.user_info_id}"
+                             target="_blank">{$c_list.user_info_name}</a></span><b>{$c_list.user_info_onclick}</b></li>
+                {/foreach}
+            </ul>
+        </div>
+    </div><!--right-->
+    <div class="null"></div></div><!--box-->
+{/block}

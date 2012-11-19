@@ -1,5 +1,5 @@
 {extends file='../Master.html'}
-{block name=title}{$tg_sortname}-团购信息{/block}
+{block name=title}团购信息{/block}
 {block name=body}
 <!-- 子页部分****** -->
 <div id="sub_top"><h3>{$web_map}</h3></div>
@@ -8,10 +8,15 @@
     <div class="left1">
         <div id="sub_tt1">
             <ul>
-                <li class="thr1">{$tg_sortname}</li>
+                <li class="thr1">本期团购</li>
+                {foreach $zh_sort_lists as $s_list}
+                <li class="thr2"><a href="{site_url('Home/GroupPurchase/ShowSort')}/{$s_list.tg_sort_id}">
+                    {$s_list.tg_sort_name}</a></li>
+                {/foreach}
+            </ul>
+            <p>本站共组织&nbsp;<b>{$info_count}</b>&nbsp;次团购活动 ↓</p>
         </div>
         <!--本期团购-->
-        {foreach $tg_info_lists as $tg_table}
         <div class="tuan">
             <div class="tuan_01">
                 <h2><img alt="{$tg_table.tg_info_name}" src="{$tg_table.tg_info_img}"></h2>
@@ -35,11 +40,6 @@
                title="在线咨询" /></a></span></h4>
             </div>
         </div>
-        {/foreach}
-        <div class="null_2"></div>
-        <div align="center">
-            {$info_page}
-        </div>
     </div><!--left-->
 
     <div class="right">
@@ -58,4 +58,47 @@
     </div><!--right-->
     <div class="null"></div></div><!--box-->
 
+<!-- 往期回顾****** -->
+<div class="box">
+    <div class="null"></div>
+    <div class="title2">
+        <h3>往期回顾</h3>
+        <h4>
+            {foreach $zh_sort_lists as $s_list}
+             <span><a href="{site_url('Home/GroupPurchase/ShowSort')}/{$s_list.tg_sort_id}">
+                 {$s_list.tg_sort_name}</a></span>
+            {/foreach}
+        </h4>
+    </div>
+    <div class="xyhj"><div id="ddemc"><div id="inddemc">
+        <ul class="xyhjlbb" id="ddemc1">
+            {foreach $tg_old_lists as $t_list}
+            <li><a title="{$t_list.tg_info_name}" href="{site_url('Home/GroupPurchase/ShowInfo')}/{$t_list.tg_info_id}">
+                <img alt="{$t_list.tg_info_name}" src="{$t_list.tg_info_img}" /></a><span>
+             {$t_list.tg_info_name}</span></li>
+            {/foreach}
+        </ul>
+        <ul class="xyhjlbb" id="ddemc2"></ul>
+    </div></div></div>
+    <div style="clear:both"></div></div><!--box-->
+<script type="text/javascript">
+    <!--    往期回顾
+    var speed = 30;
+    var tac = document.getElementById("ddemc");
+    var tac1 = document.getElementById("ddemc1");
+    var tac2 = document.getElementById("ddemc2");
+
+    tac2.innerHTML = tac1.innerHTML;
+    function Marquee() {
+        if (tac2.offsetWidth - tac.scrollLeft <= 0)
+            tac.scrollLeft -= tac1.offsetWidth
+        else {
+            tac.scrollLeft++;
+        }
+    }
+    var MyMar = setInterval(Marquee, speed);
+    tac.onmouseover = function () { clearInterval(MyMar) };
+    tac.onmouseout = function () { MyMar = setInterval(Marquee, speed) };
+    //-->
+</script>
 {/block}
