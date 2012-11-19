@@ -1,0 +1,35 @@
+{extends file='../Master.html'}
+{block name=title}帐号管理{/block}
+{block name=body}
+<div class="right2">
+    <h2>帐号管理</h2>
+
+    <div id="sub_zhuce2">
+        <h5>修改密码&nbsp;↓</h5>
+        <dl>
+            <dd>新密码：</dd>
+            <dd></dd>
+        </dl>
+        <form method="POST">
+        <ul>
+            <li>
+                <input type="text" class="input04" name="user_info_password"/>
+            </li>
+            <li><input name="input" type="button" value="更新" class="submit1"/></li>
+        </ul>
+        </form>
+        <div style="clear:both"></div>
+    </div>
+    {if isset($smarty.session.message.changepwd)}
+    {if $smarty.session.message.changepwd.type eq 'error'}
+    <p style="color: red;">{$smarty.session.message.changepwd.msg}</p>
+    {else}
+    <p style="color: green;">{$smarty.session.message.changepwd.msg}</p>
+    {/if}
+    {/if}
+
+</div>
+<!--right-->
+<div class="null"></div>
+</div><!--box-->
+{/block}

@@ -5,7 +5,7 @@
  * Time: 下午4:01
  *
  */
-class Promotion extends Enterprise_Controller
+class UserMarket extends Enterprise_Controller
 {
     function __construct()
     {

@@ -18,6 +18,12 @@ class Model_jc_coulumn extends CI_Model
 
     function Add($info)
     {
-        return $this->db->insert($this->_table,$info);
+        return $this->db->insert($this->_table, $info);
+    }
+
+    function GetTop($count)
+    {
+        $this->db->order_by('jc_coulumn_number', 'desc');
+        return $this->db->get($this->_table, $count)->result_array();
     }
 }

@@ -38,11 +38,32 @@ class Model_user_info extends CI_Model
         $this->db->get_where($this->_table, $condtion, $count)->result_array();
     }
 
-    function EnterpriseValidate($info)
+    function Validate($info)
     {
-        $info['user_info_type'] = 1;
-        $info['user_info_check'] = 1;
         $ret = $this->db->get_where($this->_table, $info)->result_array();
-       return $ret;
+        return $ret;
+    }
+
+    function ChangePassword($info)
+    {
+        $this->db->where('user_info_id', $info['user_info_id']);
+        unset($info['user_info_id']);
+        return $this->db->update($this->_table, $info);
+    }
+
+    function UpdateInfo($info)
+    {
+        $this->db->where('user_info_id', $info['user_info_id']);
+    }
+
+    function Get($id)
+    {
+        $ret = $this->db->get_where($this->_table, array('user_info_id' => $id))->result_array();
+        return $ret[0];
+    }
+
+    function Add($info)
+    {
+        return $this->db->insert($this->_table, $info);
     }
 }

@@ -1,0 +1,88 @@
+{extends file='../Master.html'}
+{block name=title}帐号注册{/block}
+{block name=body}
+
+<!-- 子页部分****** -->
+<div class="null_1"></div>
+<div class="box">
+    <div class="left1">
+        <!--01 标题-->
+        <div id="sub_top1"><h3>会员注册</h3><h4>您当前所在的位置：<a href="#">曲靖建材网</a> - <a href="#">会员注册</a> - <b>注册本站会员</b></h4></div>
+        <!--02 内容-->
+        <div id="sub_zhuce2">
+            <form name="form2" method="post">
+                <h3><img src="/static/images/zhuce04.jpg" alt="个人注册"></h3>
+                <h4>注册完成后, 该帐号将作为您在本站的通行帐号, 您可以享受本站提供的各种服务.</h4>
+                <h5>基本信息填写&nbsp;↓</h5>
+                <dl>
+                    <dd><b>*&nbsp;</b>用户名：</dd>
+                    <dd><b>*&nbsp;</b>密码：</dd>
+                    <dd><b>*&nbsp;</b>确认密码：</dd>
+                    <dd><b>*&nbsp;</b>手机：</dd>
+                    <dd><b>*&nbsp;</b>电子邮件：</dd>
+                </dl>
+                <ul>
+                    <li><input name="user_info_loginid" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_password" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_password_re" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_phone" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_email" type="text" value="" class="input04"/></li>
+                </ul>
+                <h5>企业信息填写&nbsp;↓</h5>
+                <dl>
+                    <dd><b>*&nbsp;</b>公司名称：</dd>
+                    <dd><b>*&nbsp;</b>负责人姓名：</dd>
+                    <dd><b></b>座机：</dd>
+                    <dd><b></b>传真：</dd>
+                    <dd><b></b>企业网址：</dd>
+                    <dd><b></b>公司地址：</dd>
+                    <dd><b></b>所属行业：</dd>
+                    <dd><b></b>主营：</dd>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+                <ul>
+                    <li><input name="user_info_name" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_principal" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_telephone" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_fax" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_web" type="text" value="" class="input04"/></li>
+                    <li><input name="user_info_address" type="text" value="" class="input04"/></li>
+                    <li>
+                        <select name="user_info_sort" class="input04">
+                            {foreach $c_list as $c}
+                                <option value="{$c.user_coulumn_id}">{$c.user_coulumn_name}</option>
+                            {/foreach}
+                        </select>
+                    </li>
+                    <li><input name="user_info_operation" type="text" value="" class="input04"/></li>
+                    <li><input type="checkbox" value="checkbox">&nbsp;&nbsp;我已阅读并同意<a href="#">《福麒麟曲靖建材网网络服务条款》</a></li>
+                    <li><input type="submit" value="注册新用户" class="submit1"/></li>
+                </ul>
+            </form>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <!--left-->
+
+    <div class="right">
+        <div id="zhuce">
+            <h3><a href="#">免费注册</a></h3>
+            <h4><a href="#">发布二手供求信息</a></h4>
+        </div>
+        <div id="jiaru">
+            <ul>
+                <li>推广、销售企业产品</li>
+                <li>提升企业知名度</li>
+                <li>发布二手供求信息</li>
+                <li>在线洽谈生意</li>
+            </ul>
+        </div>
+        <!--VIP企业-->
+        <div class="null"></div>
+        <!--广告-->
+    </div>
+    <!--right-->
+    <div class="null"></div>
+</div><!--box-->
+{/block}

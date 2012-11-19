@@ -1,0 +1,40 @@
+{extends file='../Master.html'}
+{block name=title}帐号注册{/block}
+{block name=body}
+<div class="null_1"></div>
+<div class="box">
+    <div class="left1">
+        <!--01 标题-->
+        <div id="sub_top1"><h3>会员注册</h3><h4>您当前所在的位置：<a href="#">曲靖建材网</a> - <a href="#">会员注册</a> - <b>注册本站会员</b></h4></div>
+        <!--02 内容-->
+        <div id="sub_zhuce1">
+            <h3><img src="/static/images/zhuce01.jpg" alt="新用户注册"></h3>
+            <h4>注册完成后, 该帐号将作为您在本站的通行帐号, 您可以享受本站提供的各种服务.</h4>
+            <ul>
+                <li><a href="{site_url('Account/Register/Personal')}"><img src="/static/images/zhuce02.jpg" alt="个人注册"></a></li>
+                <li><a href="{site_url('Account/Register/Enterprise')}"><img src="/static/images/zhuce03.jpg" alt="企业注册"></a></li>
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    <!--left-->
+
+    <div class="right">
+        <div id="zhuce">
+            <h3><a href="#">免费注册</a></h3>
+            <h4><a href="#">发布二手供求信息</a></h4>
+        </div>
+        <div id="jiaru">
+            <ul>
+                <li>推广、销售企业产品</li>
+                <li>提升企业知名度</li>
+                <li>发布二手供求信息</li>
+                <li>在线洽谈生意</li>
+            </ul>
+        </div>
+        <div class="null"></div>
+        <div class="add01"><a href="#"><img src="/static/images/add_02.jpg" alt="明明白白买建材,福麒麟比价格"></a></div>
+    </div>
+    <div class="null"></div>
+</div>
+{/block}

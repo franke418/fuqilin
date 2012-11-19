@@ -13,19 +13,19 @@
 <!-- 头部开始****** -->
 <div id="head">
     <div id="header">
+        <form name="form1" method="post" action="">
             <ul>
                 <li><a href="/">建材网首页</a>&nbsp;|&nbsp;</li>
                 <li><a href="{site_url('Home/BuildingMaterials/Index')}">建材大全</a>&nbsp;|&nbsp;</li>
                 {if isset($smarty.session.IS_LOGGED)}
+                <li><a href="{site_url('Account/Index/Logout')}">退出登录</a></li>
                 <li>欢迎回来，
                     {if isset($smarty.session.CURRENT_ENTER)}
-                    <a style="text-decoration: underline" href="{site_url('Enterprise/Manage/Index')}">{$smarty.session.CURRENT_ENTER.user_info_loginid}</a>
+                    <a  style="text-decoration: underline" href="{site_url('Enterprise/Manage/Index')}">{$smarty.session.CURRENT_ENTER.user_info_loginid}</a>
                     {else}
-                    <a style="text-decoration: underline" href="{site_url('Member/Manage/Index')}"{$smarty.session.CURRENT_MEMBER.user_info_loginid}</a>
+                    <a  style="text-decoration: underline" href="{site_url('Member/Manage/Index')}"{$smarty.session.CURRENT_MEMBER.user_info_loginid}</a>
                     {/if}
-                    &nbsp;|&nbsp;
                 </li>
-                <li><a href="{site_url('Account/Index/Logout')}">退出登录</a>&nbsp;|&nbsp;</li>
                 {else}
                 <li>用户登录</li>
                 <form action="{site_url('Account/Index/Login')}" method="POST">
@@ -40,12 +40,12 @@
                 </form>
                 <li><span><a href="{site_url('Account/Register/Choose')}">新用户注册</a></span></li>
                 {/if}
-
             </ul>
             <h3>
                 <span><a href="about.html">关于我们</a>&nbsp;|&nbsp;</span> <span><a href="about.html">联系我们</a>&nbsp;|&nbsp;</span>
                 <span><b><a href="about.html">广告服务</a></b></span>
             </h3>
+        </form>
     </div>
 </div>
 <div id="top">
@@ -77,7 +77,31 @@
         <li class="one2"><a href="{site_url('Home/Enterprise/Index')}">企业库</a></li>
     </ul>
 </div>
-
+<div class="null_1"></div>
+<div class="box">
+    <div class="left2">
+        <!--个人菜单-->
+        <div id="mem_list">
+            <h3><img src="{$base_url}static/images/mem_tt2.gif" alt="企业会员"></h3>
+            <ul>
+                <li class="five2"><a href="{site_url('Enterprise/Manage/Index')}">账号管理</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/Manage/Info')}">完善企业资料</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/Furniture/Index')}">家具管理</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/Decoration/Index')}">装饰管理</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/Order/Index')}">订单查看</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/Demand/Index')}">发布需求信息</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/UserMarket/Index')}">发布二手信息</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/Exhibition/Index')}">展会申请</a></li>
+                <li class="five1"><a href="{site_url('Enterprise/GroupPurchase/Index')}">团购申请</a></li>
+            </ul>
+            <h4><img src="{$base_url}static/images/mem_h4.gif" alt="福麒麟网"></h4>
+        </div>
+        <!--VIP企业-->
+        <div class="null"></div>
+        <!--广告-->
+        <div class="null"></div>
+    </div>
+    <!--left-->
 {block name=body}
 {/block}
 
@@ -105,7 +129,7 @@
         福麒麟（曲靖建材网）版权所有，未经授权禁止转载、摘编、复制或建立镜像.如有违反，追究法律责任！&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">网站统计</a></p>
     <p>
         广告业务合作QQ：88888888&nbsp;&nbsp;&nbsp;&nbsp;友情链接合作QQ：88888888&nbsp;&nbsp;&nbsp;&nbsp;手机：13888777777&nbsp;&nbsp;&nbsp;&nbsp;<a
-            href="#"><img src="{$base_url}static/images/qq.gif">&nbsp;在线客服</a></p>
+            href="#"><img src="images/qq.gif">&nbsp;在线客服</a></p>
     <p>
         Copygight &copy; 2012 福麒麟-曲靖建材网（www.fuqilin.com） All Rights Reserved
     </p>

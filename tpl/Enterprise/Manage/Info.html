@@ -1,0 +1,53 @@
+{extends file='../Master.html'}
+{block name=title}资料管理{/block}
+{block name=body}
+<div class="right2">
+    <h2>资料管理</h2>
+
+    <form method="POST">
+        <div id="sub_zhuce2">
+            <h5>基本信息&nbsp;↓</h5>
+            <dl>
+                <dd>用户登录名：</dd>
+                <dd>用户手机：</dd>
+                <dd>用户邮箱：</dd>
+                <dd>用户企业名称：</dd>
+                <dd>用户企业负责人姓名：</dd>
+                <dd>用户企业座机：</dd>
+                <dd>用户企业传真：</dd>
+                <dd>用户企业网址：</dd>
+                <dd>用户企业地址：</dd>
+                <dd></dd>
+            </dl>
+            <ul>
+                <li>
+                    <input type="text" id="user_info_loginid" name="user_info_loginid" class="input04" value="{$user.user_info_loginid}"/>
+                </li>
+                <li>
+                    <input type="text" id="user_info_phone" name="user_info_phone" class="input04" value="{$user.user_info_phone}"/>
+
+                </li>
+                <li><input type="text" id="user_info_email" name="user_info_email" class="input04" value="{$user.user_info_email}"/>
+                </li>
+                <li><input type="text" id="user_info_name" name="user_info_name" class="input04" value="{$user.user_info_name}"/>
+                </li>
+                <li><input type="text" id="user_info_principal" name="user_info_principal" class="input04" value="{$user.user_info_principal}"/>
+                </li>
+                <li><input type="text" id="user_info_telephone" name="user_info_telephone" class="input04" value="{$user.user_info_telephone}"/>
+                </li>
+                <li><input type="text" id="user_info_fax" name="user_info_fax" class="input04" value="{$user.user_info_fax}"/>
+                </li>
+                <li><input type="text" id="user_info_web" name="user_info_web" class="input04" value="{$user.user_info_web}"/>
+                </li>
+                <li><input type="text" id="user_info_address" name="user_info_address" class="input04" value="{$user.user_info_address}"/>
+                </li>
+                <li><input name="input" type="button" value="更新" class="submit1"/></li>
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+    </form>
+</div>
+<!--right-->
+<div class="null"></div>
+</div><!--box-->
+{/block}

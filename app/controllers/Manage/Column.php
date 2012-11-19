@@ -46,4 +46,24 @@ class Column extends Admin_Controller
         $this->display('Manage/Column/Enterprise.html');
     }
 
+    function EnterpriseAdd()
+    {
+        $post_info = $this->input->post(NULL, TRUE);
+        $config['upload_path'] = UPLOADPATH;
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '1024';
+        $config['encrypt_name'] = TRUE;
+        $this->load->library('upload', $config);
+        $ret = $this->upload->do_upload('user_coulumn_img');
+        if (!$ret) {
+            $_SESSION['message']['column'] = array('type' => 'error', 'msg' => $this->upload->display_errors());
+        } else {
+            $data = $this->upload->data();
+            $post_info['user_coulumn_img'] = $data['file_name'];
+        }
+        $this->model_user_coulumn->Add($post_info);
+        $_SESSION['message']['column'] = array('type' => 'info', 'msg' => '行业添加成功！');
+        redirect(site_url('Manage/Column/Enterprise'));
+    }
+
 }

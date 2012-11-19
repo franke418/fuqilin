@@ -1,0 +1,76 @@
+{extends file='../layout.html'}
+{block name=title}企业行业管理{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>企业行业管理</h2>
+        <table id="rounded-corner">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>排序</th>
+                <th>图片</th>
+                <th>简介</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $list as $ls }
+            <tr class="odd">
+                <form method="POST" action="{site_url('Manage/Column/EnterpriseDel')}">
+                <td style="width:25%">{$ls.user_coulumn_id}</td>
+                <td style="width:40%">{$ls.user_coulumn_name}</td>
+                <td style="width:10%">{$ls.user_coulumn_number}</td>
+                    <td style="width:10%">{$ls.user_coulumn_img}</td>
+                    <td style="width:10%">{$ls.user_coulumn_text}</td>
+                <td style="width:25%"><input value="删除" type="submit"/> </td>
+                    <input type="hidden" value="{$ls.user_coulumn_id}" name="id" />
+                </form>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+        {if isset($smarty.session.message.column)}
+        {if $smarty.session.message.column.type eq 'error'}
+            <p class="red">{$smarty.session.message.column.msg}</p>
+        {else}
+        <p class="green">{$smarty.session.message.column.msg}</p>
+        {/if}
+        {/if}
+        <br/>
+        <h2>添加企业行业</h2>
+        <div class="form">
+            <form method="POST" action="{site_url('Manage/Column/EnterpriseAdd')}">
+            <div class="form_row">
+                <label>栏目名称:</label>
+                <input type="text" class="form_input" name="user_coulumn_name" />
+            </div>
+
+            <div class="form_row">
+                <label>栏目排序值:</label>
+                <input type="text" class="form_input" name="user_coulumn_number" />
+            </div>
+                <div class="form_row">
+                    <label>栏目图片:</label>
+                    <input type="file" class="form_input" name="user_coulumn_img" />
+                </div>
+                <div class="form_row">
+                    <label>栏目简介:</label>
+                    <input type="text" class="form_input" name="user_coulumn_text" />
+                </div>
+
+            <div class="form_row">
+                <input type="submit" class="form_submit" value="添加" />
+            </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!-- end of right content-->
+
+{/block}
+
+<!--end of center_content-->
+

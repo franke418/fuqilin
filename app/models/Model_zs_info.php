@@ -10,5 +10,8 @@
 class Model_zs_info extends CI_Model
 {
     protected $_table = 'zs_info';
-
+    function GetListByEId($eid)
+    {
+        return $this->db->get_where($this->_table, array('zs_info_addid' => $eid))->result_array();
+    }
 }

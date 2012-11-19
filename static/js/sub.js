@@ -1,6 +1,6 @@
-            var swf_width=490;						//¿í¶È
-            var swf_height=210;						//¸ß¶È
-            //ÎÄ×ÖÑÕÉ«|ÎÄ×ÖÎ»ÖÃ|ÎÄ×Ö±³¾°ÑÕÉ«|ÎÄ×Ö±³¾°Í¸Ã÷¶È|°´¼üÎÄ×ÖÑÕÉ«|°´¼üÄ¬ÈÏÑÕÉ«|°´¼üµ±Ç°ÑÕÉ«|×Ô¶¯²¥·ÅÊ±¼ä|Í¼Æ¬¹ý¶ÉÐ§¹û|ÊÇ·ñÏÔÊ¾°´Å¥|´ò¿ª·½Ê½
+            var swf_width=490;						//ï¿½ï¿½ï¿½
+            var swf_height=210;						//ï¿½ß¶ï¿½
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«|ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½|ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½É«|ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«|ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½É«|ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½É«|ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½|Í¼Æ¬ï¿½ï¿½ï¿½Ð§ï¿½ï¿½|ï¿½Ç·ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Å¥|ï¿½ò¿ª·ï¿½Ê½
             var configtg='0xffffff|3|0x3FA61F|0|0xffffff|0x008acf|0x00033|5|3|1|_blank';
             var files = "";
             var links = "";
@@ -19,10 +19,10 @@
 				else texts += "|"+textarr[i];
             }
             document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'" >');
-            document.write('<param name="movie" value="js/index.swf"/>');
+            document.write('<param name="movie" value="/static/js/index.swf"/>');
 			document.write('<param name="quality" value="high"/>');
             document.write('<param name="menu" value="false"/>');
 			document.write('<param name="wmode" value="opaque"/>');
             document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'"/>');
-            document.write('<embed src="js/index.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'&menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+            document.write('<embed src="/static/js/index.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'&menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
 			document.write('</object>');
