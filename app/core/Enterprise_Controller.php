@@ -11,7 +11,7 @@ class Enterprise_Controller extends MY_Controller
         parent::__construct();
         if(!isset($_SESSION['CURRENT_ENTER']))
         {
-            redirect(site_url('Enterprise/Home/Login'));
+            redirect(site_url('/'));
         }
         else
         {

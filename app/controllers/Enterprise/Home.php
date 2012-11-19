@@ -22,7 +22,7 @@ class Home extends MY_Controller
         if ($this->is_post()) {
             $post_info = $this->input->post(NULL, TRUE);
             $post_info['user_info_password'] = md5($post_info['user_info_password']);
-            $ret = $this->model_user_info->EnterpriseValidate($post_info);
+            $ret = $this->model_user_info->Validate($post_info);
             if (!empty($ret)) {
                 $_SESSION['CURRENT_ENTER'] = $ret[0];
                 redirect(site_url('Enterprise/Home/Index'));

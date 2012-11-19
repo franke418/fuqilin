@@ -41,10 +41,17 @@
                 </li>
                 <li><input type="text" id="user_info_address" name="user_info_address" class="input04" value="{$user.user_info_address}"/>
                 </li>
-                <li><input name="input" type="button" value="更新" class="submit1"/></li>
+                <li><input type="submit" value="更新" class="submit1"/></li>
             </ul>
             <div style="clear:both"></div>
         </div>
+        {if isset($smarty.session.message.updateinfo)}
+        {if $smarty.session.message.updateinfo.type eq 'error'}
+        <p style="color: red;">{$smarty.session.message.updateinfo.msg}</p>
+        {else}
+        <p style="color: green;">{$smarty.session.message.updateinfo.msg}</p>
+        {/if}
+        {/if}
     </form>
 </div>
 <!--right-->

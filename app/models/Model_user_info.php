@@ -54,6 +54,7 @@ class Model_user_info extends CI_Model
     function UpdateInfo($info)
     {
         $this->db->where('user_info_id', $info['user_info_id']);
+        return $this->db->update($this->_table,$info);
     }
 
     function Get($id)
