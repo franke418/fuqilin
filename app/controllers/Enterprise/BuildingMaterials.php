@@ -14,7 +14,7 @@ class BuildingMaterials extends Enterprise_Controller
 
     function Index()
     {
-        $list = $this->model_js_info->GetListByEId($_SESSION['CURRENT_ENTER']['user_info_id']);
+        $list = $this->model_jc_info->GetListByEId($_SESSION['CURRENT_ENTER']['user_info_id']);
         $this->assign('list', $list);
         $this->display('Enterprise/BuildingMaterials/Index.html');
     }

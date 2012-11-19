@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>企业用户登录 - {$site_title}</title>
+    <link rel="stylesheet" type="text/css" href="{$base_url}static/css/style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="loginpanelwrap">
+
+    <div class="loginheader">
+        <div class="logintitle"><a href="#">企业用户登录 - {$site_title}</a></div>
+    </div>
+
+
+    <div class="loginform">
+        <form action="" method="POST">
+            <div class="loginform_row">
+                <label>用户:</label>
+                <input type="text" class="loginform_input" name="user_info_loginid"/>
+            </div>
+            <div class="loginform_row">
+                <label>密码:</label>
+                <input type="password" class="loginform_input" name="user_info_password"/>
+            </div>
+            <div class="loginform_row">
+                <input type="submit" class="loginform_submit" value="登录"/>
+            </div>
+            <div class="clear"></div>
+            {if isset($smarty.session.message.enterprise)}
+            <p class="red">{$smarty.session.message.enterprise.msg}</p>
+            {/if}
+        </form>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

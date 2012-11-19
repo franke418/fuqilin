@@ -11,4 +11,11 @@ class Model_jj_sort extends CI_Model
 {
     protected $_table = 'jj_sort';
 
+    function GetList()
+    {
+        return $this->db->get($this->_table)->result_array();
+    }
+    function Add(array $info){
+        return $this->db->insert($this->_table,$info);
+    }
 }

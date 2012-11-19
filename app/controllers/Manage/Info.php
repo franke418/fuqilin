@@ -11,9 +11,21 @@ class Info extends Admin_Controller
         parent::__construct();
     }
 
-    function BuildingMaterials()
+    function BuildingMaterials($pageNo=1)
     {
+        $pageSize = 10;
+        $this->load->library('pagination');
+
+        $config['uri_segment']=4;
+        $config['base_url'] = site_url('Manage/News/Info');
+        $config['total_rows'] = $this->model_jc_info->GetCountUnverify();
+        $config['per_page'] = $pageSize;
+        $config['use_page_numbers']=TRUE;
+
+        $this->pagination->initialize($config);
+
         $list = $this->model_jc_info->GetListUnverify();
+        $this->assign('list',$list);
         $this->display('Manage/Info/BuildingMaterials.html');
     }
     function Furniture()

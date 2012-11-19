@@ -4,7 +4,7 @@
  * User: lucky41
  * Date: 12-11-17
  * Time: 下午12:38
- * To change this template use File | Settings | File Templates.
+ * @property CI_DB_active_record $db
  */
 
 class Model_news_info extends CI_Model

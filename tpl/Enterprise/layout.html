@@ -32,82 +32,36 @@
 
     <div class="submenu">
         <ul>
-            <li><a href="{site_url('Home/Index/index')}">网站首页</a></li>
-            <li><a href="{site_url('Manage/Admin/Index')}">管理首页</a></li>
-            <li><a href="#">{$c_admin_name}</a></li>
+            <li><a href="{site_url('Home/Index/index')}" target="_blank">网站首页</a></li>
+            <li><a href="{site_url('Enterprise/Home/Index')}">管理首页</a></li>
+            <li><a href="#">{$c_enter_name}</a></li>
             <li><a href="#" class="settings">设置</a></li>
-            <li><a href="{site_url('Manage/Home/Logout')}" class="logout">退出</a></li>
+            <li><a href="{site_url('Enterprise/Home/Logout')}" class="logout">退出</a></li>
         </ul>
     </div>
     <div class="center_content">
         {block name=body}
         {/block}
         <div class="sidebar" id="sidebar">
-            <h2>系统设置</h2>
+            <h2>信息添加</h2>
 
             <ul>
-                <li><a href="{site_url('Manage/System/Setting')}">系统信息设置</a></li>
-                <li><a href="{site_url('Manage/System/CleanTemp')}">缓存清理</a></li>
-                <li><a href="{site_url('Manage/System/FriendLinks')}">友情连接管理</a></li>
+                <li><a href="{site_url('Enterprise/BuildingMaterials/Index')}">建材信息</a></li>
+                <li><a href="{site_url('Enterprise/Furniture/Index')}">家具信息</a></li>
+                <li><a href="{site_url('Enterprise/Decoration/Index')}">装饰信息</a></li>
+                <li><a href="{site_url('Enterprise/Promotion/Index')}">促销信息</a></li>
+                <li><a href="{site_url('Enterprise/Demand/Index')}">需求信息</a></li>
+                <li><a href="{site_url('Enterprise/UserMarket/Index')}">二手信息</a></li>
             </ul>
 
-            <h2>用户管理</h2>
-
-            <ul>
-                <li><a href="{site_url('Manage/Member/EnterpriseColumn')}">企业栏目</a></li>
-                <li><a href="{site_url('Manage/Member/EnterpriseCategory')}">企业分类</a></li>
-                <li><a href="{site_url('Manage/Member/Enterprise')}">企业会员</a></li>
-                <li><a href="{site_url('Manage/Member/Personal')}">个人会员</a></li>
-                <li><a href="{site_url('Manage/Member/Verify')}">会员审核</a></li>
-            </ul>
-            <h2>信息管理</h2>
-
-            <ul>
-                <li><a href="{site_url('Manage/Info/Category')}">分类管理</a></li>
-                <li><a href="{site_url('Manage/Info/Info/1')}">信息管理</a></li>
-            </ul>
-            <h2>新闻管理</h2>
-
-            <ul>
-                <li><a href="{site_url('Manage/News/Category')}">分类管理</a></li>
-                <li><a href="{site_url('Manage/News/Info/1')}">新闻管理</a></li>
-            </ul>
-            <h2>扩展分类管理</h2>
-            <ul>
-                <li><a href="{site_url('Manage/Expansion/Index')}">分类管理</a></li>
-            </ul>
-            <h2>促销管理</h2>
-            <ul>
-                <li><a href="{site_url('Manage/Discount/Category')}">分类管理</a></li>
-                <li><a href="{site_url('Manage/Discount/Info/1')}">信息管理</a></li>
-            </ul>
-            <h2>团购管理</h2>
-
-            <ul>
-                <li><a href="#">报名表查看</a></li>
-            </ul>
-            <h2>订单管理</h2>
-
-            <ul>
-                <li><a href="#">查看订单</a></li>
-                <li><a href="#">清理订单</a></li>
-            </ul>
-            <h2>展位管理</h2>
-
-            <ul>
-                <li><a href="#">展位管理</a></li>
-            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="footer">
+            2012 &copy {$site_title}
         </div>
 
-
-        <div class="clear"></div>
-    </div>
-    <div class="footer">
-        2012 &copy {$site_title}
     </div>
 
 </div>
-
-
 </body>
 </html>

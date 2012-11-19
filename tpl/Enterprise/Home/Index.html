@@ -1,0 +1,25 @@
+{extends file='../layout.html'}
+{block name=title}系统信息管理首页{/block}
+{block name=body}
+<div id="right_wrap">
+    <div id="right_content">
+        <h2>系统信息</h2>
+        <table id="rounded-corner">
+            <tr class="odd">
+                <td style="width:25%">操作系统：</td>
+                <td style="width:25%">{$os}</td>
+                <td style="width:25%">PHP版本：</td>
+                <td style="width:25%">{$php_version}</td>
+            </tr>
+            <tr class="even">
+                <td style="width:25%">运行方式：</td>
+                <td style="width:25%">{$run_method}</td>
+                <td style="width:25%">软件版本：</td>
+                <td style="width:25%">{$server_version}</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+{/block}
+

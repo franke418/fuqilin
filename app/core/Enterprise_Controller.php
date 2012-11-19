@@ -11,17 +11,13 @@ class Enterprise_Controller extends MY_Controller
         parent::__construct();
         if(!isset($_SESSION['CURRENT_ENTER']))
         {
-            redirect(site_url('Manage/Home/Login'));
+            redirect(site_url('Enterprise/Home/Login'));
         }
         else
         {
             $c_user = $_SESSION['CURRENT_ENTER'];
-            $admin_name = $c_user['admin_info_name'];
-            $admin_ip = $c_user['admin_info_lastip'];
-            $admin_time = $c_user['admin_info_lasttime'];
-            $this->assign('c_admin_name',$admin_name);
-            $this->assign('c_admin_ip',$admin_ip);
-            $this->assign('c_admin_time',$admin_time);
+            $user_name = $c_user['user_info_loginid'];
+            $this->assign('c_enter_name',$user_name);
         }
     }
 }

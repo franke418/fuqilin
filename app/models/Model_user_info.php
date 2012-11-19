@@ -37,4 +37,12 @@ class Model_user_info extends CI_Model
         $this->db->order_by('user_info_oclick', 'desc');
         $this->db->get_where($this->_table, $condtion, $count)->result_array();
     }
+
+    function EnterpriseValidate($info)
+    {
+        $info['user_info_type'] = 1;
+        $info['user_info_check'] = 1;
+        $ret = $this->db->get_where($this->_table, $info)->result_array();
+       return $ret;
+    }
 }
